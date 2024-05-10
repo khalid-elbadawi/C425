@@ -1,0 +1,55 @@
+:root {
+    --md-admonition-icon--exercise: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M80-40v-80h800v80H80Zm80-120v-240q-33-54-51-114.5T91-638q0-61 15.5-120T143-874q8-21 26-33.5t40-12.5q31 0 53 21t18 50l-11 91q-6 48 8.5 91t43.5 75.5q29 32.5 70 52t89 19.5q60 0 120.5 12.5T706-472q45 23 69.5 58.5T800-326v166H160Zm80-80h480v-86q0-24-12-42.5T674-398q-41-20-95-31t-99-11q-66 0-122.5-27t-96-72.5Q222-585 202-644.5T190-768q-10 30-14.5 64t-4.5 66q0 58 20.5 111.5T240-422v182Zm240-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-720q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720q0 33 23.5 56.5T480-640ZM320-160v-37q0-67 46.5-115T480-360h160v80H480q-34 0-57 24.5T400-197v37h-80Zm160-80Zm0-480Z"/></svg>');
+    --md-admonition-icon--output: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tv" viewBox="0 0 16 16"><path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5M13.991 3l.024.001a1.5 1.5 0 0 1 .538.143.76.76 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.5 1.5 0 0 1-.143.538.76.76 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.5 1.5 0 0 1-.538-.143.76.76 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.5 1.5 0 0 1 .143-.538.76.76 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2"/></svg>')
+  }
+  .md-typeset .admonition.exercise,
+  .md-typeset details.exercise {
+    border-color: rgb(43, 155, 70);
+  }
+  .md-typeset .exercise > .admonition-title,
+  .md-typeset .exercise > summary {
+    background-color: rgba(43, 155, 70, 0.1);
+  }
+  .md-typeset .exercise > .admonition-title::before,
+  .md-typeset .exercise > summary::before {
+    background-color: rgb(43, 155, 70);
+    -webkit-mask-image: var(--md-admonition-icon--exercise);
+            mask-image: var(--md-admonition-icon--exercise);
+  }
+  .md-typeset .admonition.output,
+  .md-typeset details.output {
+    border-color: rgb(25, 25, 24);
+    background-color: rgba(222, 228, 230, 0.285);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .md-typeset .output > .admonition-title,
+  .md-typeset .output > summary {
+    background-color: rgba(200, 195, 195, 0.74);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .md-typeset .output > .admonition-title::before,
+  .md-typeset .output > summary::before {
+    background-color: rgb(114, 117, 115);
+    -webkit-mask-image: var(--md-admonition-icon--output);
+            mask-image: var(--md-admonition-icon--output);
+  }
+
+  #darkgray
+  {
+    background-color:darkgray;
+  }
+  
+  #lightgray
+  {
+    background-color:coral;
+  }
+
+  #shade
+  {
+    background-color: rgba(43, 155, 70, 0.1);
+  }
+
+  #grayfont
+  {
+    color: gray;
+  }
