@@ -655,7 +655,7 @@
 <p>When I run the above program in my laptop, the running time will be approximately 40s. This is the same running time for the serial version. So, <em>we did not benefit from the parallel hardware</em>!</p>
 <p>If you observe the output of the previous program, you will see that P0, P1, and P2 will finish quickly, while P3 is still running. This implies that the distribution is not fair among the processors. Notice that Processor P3 calculates <code>fib(36)</code>, <code>fib(37)</code>,..., <code>fib(46)</code> and <code>fib(47)</code>. We know that the running time of <code>fib()</code> function is exponential and explodes when <span class="arithmatex">\(n&gt;40\)</span>. Unfortunately, all data items greater than 40 are assigned to a single processor, which is P3.</p>
 <h3 id="changing-the-data-distribution">Changing the data distribution</h3>
-<p>We need to distribute the data such that the data items above 40 are distributed among the processors. One possible solution is illustrated in the following table (where <span class="arithmatex">\(n = 16\)</span>):</p>
+<p>We need to distribute the data such that the data items above 40 are distributed among the processors. One possible solution is illustrated in the following table (<strong>Data Partition Table</strong>) (where <span class="arithmatex">\(n = 16\)</span>):</p>
 <table>
 <thead>
 <tr>
@@ -848,7 +848,13 @@
 <ol>
 <li>Modify the code to calculate the running time. Then, run this program FIVE times.</li>
 <li>Compare the result of this lab with the result of the previous lab.</li>
-<li>Can you propose a distribution to improve the running time? </li>
+<li>
+<p>Can you propose a distribution to improve the running time? </p>
+<ol>
+<li>Show the data partition table for your distribution</li>
+<li>Suggest an implementation to your distribution</li>
+</ol>
+</li>
 </ol>
 </div>
 
