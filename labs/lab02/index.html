@@ -1492,11 +1492,13 @@
 <h2 id="1-the-race-condition-problem">1. The Race Condition Problem</h2>
 <h3 id="what-is-a-race-condition">What is a Race Condition?</h3>
 <p>A <strong>race condition</strong> occurs when multiple threads access shared data concurrently, and the final result depends on the unpredictable timing of thread execution. The name comes from the fact that threads are "racing" to access the same resource, and the winner determines the outcome.</p>
-<p>Race conditions are particularly dangerous because:
-- They may not always manifest (the program might work correctly sometimes)
-- They're difficult to debug due to their non-deterministic nature
-- They can cause data corruption, crashes, or incorrect results
-- They become more likely on faster machines or under heavy load</p>
+<p>Race conditions are particularly dangerous because:</p>
+<ul>
+<li>They may not always manifest (the program might work correctly sometimes)</li>
+<li>They're difficult to debug due to their non-deterministic nature</li>
+<li>They can cause data corruption, crashes, or incorrect results</li>
+<li>They become more likely on faster machines or under heavy load</li>
+</ul>
 <h3 id="a-simple-example-shared-counter">A Simple Example: Shared Counter</h3>
 <p>Let's start with a seemingly innocent example that demonstrates the race condition problem:</p>
 <div class="language-cpp select copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -1679,9 +1681,11 @@
 <h3 id="what-is-a-semaphore">What is a Semaphore?</h3>
 <p>A <strong>semaphore</strong> is a more general synchronization primitive than a mutex. While a mutex is binary (locked or unlocked), a semaphore maintains a counter that represents the number of available resources.</p>
 <p>Semaphores are fundamental synchronization tools in concurrent programming, used to manage access to shared resources and coordinate thread execution. They are widely utilized in POSIX-compliant systems, such as Unix-like operating systems, to handle multi-threaded applications.</p>
-<p>A <strong>semaphore</strong> is an integer variable manipulated through two <em>atomic</em> operations:
-- <strong>Wait (P)</strong>: Decrements the semaphore; if the value is zero, the thread blocks until it becomes positive.
-- <strong>Signal (V)</strong>: Increments the semaphore, potentially unblocking a waiting thread.</p>
+<p>A <strong>semaphore</strong> is an integer variable manipulated through two <em>atomic</em> operations:</p>
+<ul>
+<li><strong>Wait (P)</strong>: Decrements the semaphore; if the value is zero, the thread blocks until it becomes positive.</li>
+<li><strong>Signal (V)</strong>: Increments the semaphore, potentially unblocking a waiting thread.</li>
+</ul>
 <h4 id="types-of-semaphores">Types of Semaphores</h4>
 <ul>
 <li><strong>Binary Semaphore</strong>: Limited to 0 or 1, often used for locking (mutual exclusion).</li>
