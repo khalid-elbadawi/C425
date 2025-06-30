@@ -11,6 +11,8 @@
         <link rel="canonical" href="https://khalid-elbadawi.github.io/C425/labs/lab04/">
       
       
+        <link rel="prev" href="../lab03/">
+      
       
       
       <link rel="icon" href="../../images/favicon.ico">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Lab(3): Preserving Dependency - Parallel Processing Systems</title>
+        <title>Lab (4): Cache Locality and Memory Access Optimization - Parallel Processing Systems</title>
       
     
     
@@ -87,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#problem-description" class="md-skip">
+        <a href="#lab-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab(3): Preserving Dependency
+              Lab (4): Cache Locality and Memory Access Optimization
             
           </span>
         </div>
@@ -300,8 +302,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -311,6 +315,8 @@
       
         
       
+        
+      
     
     
     
@@ -320,11 +326,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -340,7 +346,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Labs
@@ -416,6 +422,292 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab (4): Cache Locality and Memory Access Optimization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab (4): Cache Locality and Memory Access Optimization
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab Submission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-understanding-memory-hierarchy-and-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Understanding Memory Hierarchy and Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Understanding Memory Hierarchy and Cache">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-memory-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Memory Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cache-matters-understanding-cache-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Cache Matters: Understanding Cache Locality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-demonstration-sequential-vs-strided-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Demonstration: Sequential vs. Strided Access
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-array-access-patterns-and-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Array Access Patterns and Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Array Access Patterns and Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#row-major-vs-column-major-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row-Major vs. Column-Major Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Row-Major vs. Column-Major Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Explanation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cache-friendly-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cache-Friendly Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Cache-Friendly Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-arrays-soa-vs-array-of-structures-aos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of Arrays (SoA) vs. Array of Structures (AoS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-matrix-multiplication-the-ultimate-cache-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Matrix Multiplication: The Ultimate Cache Challenge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Matrix Multiplication: The Ultimate Cache Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-matrix-multiplication-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Matrix Multiplication Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive-matrix-multiplication-ijk-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive Matrix Multiplication (ijk order)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-blocking-tiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Blocking (Tiling)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-optimizing-strided-array-summation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise: Optimizing Strided Array Summation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise: Optimizing Strided Array Summation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submission
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -448,28 +740,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#problem-description" class="md-nav__link">
+  <a href="#lab-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Problem Description
+      Lab Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-serial-program" class="md-nav__link">
+  <a href="#lab-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      The Serial Program
+      Lab Objectives
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Serial Program">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab Submission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-understanding-memory-hierarchy-and-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Understanding Memory Hierarchy and Cache
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Understanding Memory Hierarchy and Cache">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#only-the-master-thread-manipulates-io" class="md-nav__link">
+  <a href="#the-memory-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
-      Only the Master Thread Manipulates I/O
+      The Memory Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Principles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cache-matters-understanding-cache-locality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Cache Matters: Understanding Cache Locality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-demonstration-sequential-vs-strided-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Demonstration: Sequential vs. Strided Access
     </span>
   </a>
   
@@ -481,19 +827,133 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-parallel-program" class="md-nav__link">
+  <a href="#2-array-access-patterns-and-performance" class="md-nav__link">
     <span class="md-ellipsis">
-      The Parallel Program
+      2. Array Access Patterns and Performance
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Parallel Program">
+    <nav class="md-nav" aria-label="2. Array Access Patterns and Performance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#thread-synchronization" class="md-nav__link">
+  <a href="#row-major-vs-column-major-access" class="md-nav__link">
     <span class="md-ellipsis">
-      Thread Synchronization
+      Row-Major vs. Column-Major Access
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Row-Major vs. Column-Major Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Explanation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cache-friendly-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cache-Friendly Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Cache-Friendly Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-of-arrays-soa-vs-array-of-structures-aos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure of Arrays (SoA) vs. Array of Structures (AoS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-matrix-multiplication-the-ultimate-cache-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Matrix Multiplication: The Ultimate Cache Challenge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Matrix Multiplication: The Ultimate Cache Challenge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-matrix-multiplication-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Matrix Multiplication Matters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive-matrix-multiplication-ijk-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Naive Matrix Multiplication (ijk order)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-blocking-tiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cache Blocking (Tiling)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-optimizing-strided-array-summation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise: Optimizing Strided Array Summation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise: Optimizing Strided Array Summation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submission
     </span>
   </a>
   
@@ -520,275 +980,561 @@
 
 
 
-  <h1>Lab(3): Preserving Dependency</h1>
+  <h1>Lab (4): Cache Locality and Memory Access Optimization</h1>
 
-<p><strong>Lab Objectives:</strong></p>
+<h2 id="lab-overview"><strong>Lab Overview</strong></h2>
+<p>In previous labs, we explored concurrent programming and thread synchronization. While these techniques help utilize multiple CPU cores, another critical aspect of performance optimization often has a greater impact: <strong>cache locality</strong>. Modern processors are fast, but memory access is slow. To bridge this gap, processors use a hierarchy of caches (L1, L2, L3) to store frequently accessed data close to the CPU. Optimizing for cache locality can dramatically improve performance—sometimes by orders of magnitude.</p>
+<p>This lab teaches you how memory access patterns affect performance, how to write cache-friendly code, and demonstrates these concepts through examples, culminating in optimized matrix multiplication algorithms.</p>
+<h2 id="lab-objectives"><strong>Lab Objectives</strong></h2>
 <ol>
-<li>Parallelize a serial program using Pthread Library</li>
-<li>Learn how to handle I/O</li>
-<li>Learn how to measure the execution time of a parallel code.</li>
-<li>Learn how to synchronize between threads using mutexes.</li>
+<li>Understand the memory hierarchy and cache behavior</li>
+<li>Learn the difference between spatial and temporal locality</li>
+<li>Write code that exploits cache locality effectively</li>
+<li>Compare performance of cache-friendly vs. cache-unfriendly algorithms</li>
+<li>Implement and optimize matrix multiplication algorithms</li>
+<li>Measure and analyze performance improvements using timing</li>
+<li>Apply cache optimization techniques to real-world problems</li>
 </ol>
-<p><strong>Lab assignment:</strong></p>
-<ol>
-<li>Do exercise 1, 2 and 3</li>
-</ol>
-<h2 id="problem-description">Problem Description</h2>
-<p>Assume we have a file that contains one million decimal numbers. We need to read these numbers and calculate their sum.</p>
-<h2 id="the-serial-program">The Serial Program</h2>
-<p>Let us write a SERIAL program to solve the above problem.
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">/*</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="cm">    This program reads N values from a text file. </span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cm">    Then, it calculates their sum.</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="cm">*/</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1&#39;000&#39;000</span><span class="p">;</span><span class="w">    </span><span class="c1">// C++14</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">{</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="n">ifstream</span><span class="w"> </span><span class="n">dataFile</span><span class="p">;</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="n">dataFile</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;mydata.txt&quot;</span><span class="p">);</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dataFile</span><span class="p">.</span><span class="n">fail</span><span class="p">())</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">        </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Cannot open mydata.txt file&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">        </span><span class="n">dataFile</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">    </span><span class="n">dataFile</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Sum = %.1f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">);</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div></p>
-<p>The output is:</p>
-<div class="admonition output">
-<p class="admonition-title">Output</p>
-<p>Sum = 49965869.8</p>
-</div>
-<p>The above program assumes we know the number of values in the <code>mydata.txt</code> file. If we don't know, then we can update Lines 25-28 as follows:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">dataFile</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
-</span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">What is the expected sum?</p>
-<p>The numbers in the file are generated using <code>RAND()*100</code> in Excel program and repeated one million times. Click <a href="../../files/mydata.txt">here</a> to download the file [5MB].</p>
-<p>We can estimate the sum of those values as follows. Let's consider <strong>n</strong> independent standard uniform random variables, denoted as <span class="arithmatex">\(X_1, X_2, \ldots, X_n\)</span>, each uniformly distributed on the interval <span class="arithmatex">\([0, 100]\)</span>. We want to estimate the expected value of their sum, which can be expressed as:</p>
-<div class="arithmatex">\[ E(X_1 + X_2 + \ldots + X_n) \]</div>
-<p>The key property we'll use here is the <strong>linearity of expectation</strong>. It states that for any random variables <span class="arithmatex">\(Y_1, Y_2, \ldots, Y_n\)</span>, if their expectations exist, then:</p>
-<div class="arithmatex">\[ E(Y_1 + Y_2 + \ldots + Y_n) = E(Y_1) + E(Y_2) + \ldots + E(Y_n) \]</div>
-<p>Applying this to our case, where <span class="arithmatex">\(Y_i = X_i\)</span>, we have:</p>
-<div class="arithmatex">\[ E(X_1 + X_2 + \ldots + X_n) = E(X_1) + E(X_2) + \ldots + E(X_n) \]</div>
-<p>Since each <span class="arithmatex">\(X_i\)</span> is uniformly distributed on <span class="arithmatex">\([0, 100]\)</span>, their expected value is:</p>
-<div class="arithmatex">\[ E(X_i) = \frac{100-0}{2}=50 \]</div>
-<p>Therefore:</p>
-<div class="arithmatex">\[ E(X_1 + X_2 + \ldots + X_n) = n \cdot 50 = 50n \]</div>
-<p>So, <span class="arithmatex">\(\sum_{i=1}^n x_i \approx 50n\)</span>. Hence, you can test the program several times with different values of <code>N</code>. In each run, you can estimate the expected sum.</p>
-</div>
-<h3 id="only-the-master-thread-manipulates-io">Only the Master Thread Manipulates I/O</h3>
-<p>If we try to parallelize the <code class="language-c++ highlight"><span class="k">for</span></code> loop (i.e., Lines 25-28) using Thread model, then we are going to violate our recommendation </p>
-<blockquote>
-<p><em>Only a single process/thread will attempt to access any single file</em>. See slide 29 Unit 3.</p>
-</blockquote>
-<p>To tackle this problem, we let the master thread to load the data from the file into a shared memory. To implement this solution, we need:</p>
-<ol>
-<li>to declare a global a pointer that points to the shared memory
-    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
-</span></code></pre></div></li>
-<li>
-<p>the master thread to create the shared memory using <code class="language-c++ highlight"><span class="k">new</span></code> operator
-    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;No sufficient memory to load the file&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
-</span></code></pre></div></p>
-<p>If you prefer C, unfortunately, the C language does not provide <code>new</code> operator. Instead, we use the standard function <code>malloc()</code> as follows:
-<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;No sufficient memory to load the file</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>the master thread to load the values from the file into the shared memory:
-    <div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">dataFile</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span></code></pre></div></p>
-</li>
-</ol>
-<p>The updated code can be found at OnlineDBG.
-<a class="md-button" href="https://onlinegdb.com/lJUOwIMp4B">Updated Code</a></p>
-<mark class="critic block">
-<p>Unfortunately, the OnlineDBG has a restriction on the file size (100KB only). The file <code>mydata.txt</code> has been truncated to 17940 values only to match the file size restriction. </p>
-</mark>
-<p>The sum of these values is <strong>901746.3</strong> <span class="arithmatex">\((\approx 50 \times 17940 = 897,000)\)</span>.</p>
-<h2 id="the-parallel-program">The Parallel Program</h2>
-<p>We are going to <strong><em>embarrasingly</em></strong> parallelize the serial program by dividing the work among <code>NP</code> threads/processes. In particular, we are going to parallelize the following code:</p>
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-41">41</a></span>
-<span class="normal"><a href="#__codelineno-6-42">42</a></span>
-<span class="normal"><a href="#__codelineno-6-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
-</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span></code></pre></div></td></tr></table></div>
-<p>The data items in the array <code>x</code> will be distributed among the <code>NP</code> threads, as we did in Lab(2). All threads are going to execute a single task, named <code>computeSum()</code>, to emulate SPMD. Then, we manually assign an ID number for each thread, as depicted in the following diagram:</p>
-<p><a class="glightbox" href="../../images/lab3forking.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Thread Task" src="../../images/lab3forking.svg" /></a></p>
-<p>The <code>computeSum()</code> is implemented as follows:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">computeSum</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">tid</span><span class="p">)</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="n">tid</span><span class="p">;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">block_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">NP</span><span class="p">;</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">block_length</span><span class="p">;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">block_length</span><span class="p">;</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">start</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">}</span>
-</span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title"><code class="language-c highlight"><span class="kt">void</span><span class="w"> </span><span class="o">*</span></code> data type</p>
-<p>You may notice that the function <code>computeSum()</code> has the following prototype:
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">computeSum</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
-</span></code></pre></div>
-This is the default prototype of the thread function as mentioned in POSIX standard. It means the thread function takes an object (any object) and returns an object (any object).</p>
-<p>Since, we are passing an integer value, we must convert it from <code>int</code> to <code>void *</code> using type casting operator(s). Then, inside the thread function, we reverse the type casting (i.e., from <code>void *</code> to <code>int</code>). </p>
-</div>
-<div class="admonition exercise">
-<p class="admonition-title">Exercise (1)</p>
-<p>Goto OnlineGDB by clicking the following button:</p>
-<p><a class="md-button" href="https://onlinegdb.com/tWDEJ3IPu">Exercise Lab3b</a></p>
-<ol>
-<li>Run this program several times (at least five times) and observe the output. What did you observe? Why?</li>
-<li>
-<p>Modify the program to compute the running time of the parallelized part. The running time should not consider:</p>
+<h2 id="prerequisites"><strong>Prerequisites</strong></h2>
 <ul>
-<li>the overhead of forking and joining and </li>
-<li>the overhead of uploading the data into the memory.</li>
-<li>See slide 49 of Unit 3. </li>
+<li>Understanding of arrays and multi-dimensional arrays in C++</li>
+<li>Basic knowledge of memory layout and pointers</li>
+<li>Familiarity with timing measurements (chrono library)</li>
+<li>Completion of previous pthread labs (helpful but not required)</li>
 </ul>
-</li>
+<h2 id="lab-submission"><strong>Lab Submission</strong></h2>
+<ol>
+<li>Complete the exercise at the end</li>
+<li>Write your name and index in the first line of your program</li>
+<li>Take screenshots of your code including your name and index</li>
+<li>Take screenshots showing performance comparisons and timing results</li>
+<li>Include a brief analysis of your results in the document</li>
+<li>Put all work in a Word document, convert to PDF, and upload to LMS</li>
 </ol>
-</div>
-<h3 id="thread-synchronization">Thread Synchronization</h3>
-<p>The program in Exercise (1) has a serious BUG. All threads are accessing and modifying the shared variable <code>sum</code>. This problem is known as <strong>race condition</strong>, because the threads or processes are in a "race" to carry out the highlighted operation:</p>
-<div class="language-c++ highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-68">68</a></span>
-<span class="normal"><a href="#__codelineno-9-69">69</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-68"><a id="__codelineno-9-68" name="__codelineno-9-68"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">start</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-</span><span id="__span-9-69"><a id="__codelineno-9-69" name="__codelineno-9-69"></a><span class="hll"><span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span></span></code></pre></div></td></tr></table></div>
-<p>Therefore, Line 69 is a <strong>critical section</strong>. Now, it's our job as programmers to ensure <strong>mutually exclusive</strong> access to the critical section by using <strong>mutex</strong> (or simply <strong>lock</strong>). To add a mutex:</p>
+<hr />
+<h2 id="1-understanding-memory-hierarchy-and-cache"><strong>1. Understanding Memory Hierarchy and Cache</strong></h2>
+<h3 id="the-memory-hierarchy">The Memory Hierarchy</h3>
+<p>Modern computer systems use a memory hierarchy to balance speed, capacity, and cost. Each level has typical <strong>capacities</strong> (e.g., 1KB, 32KB, 256KB) and access times:</p>
+<table>
+<thead>
+<tr>
+<th>Memory Level</th>
+<th>Access Time</th>
+<th>Capacity</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU Registers</td>
+<td>~1 cycle</td>
+<td>1KB</td>
+<td>Fastest</td>
+</tr>
+<tr>
+<td>L1 Cache</td>
+<td>~3 cycles</td>
+<td>32KB</td>
+<td></td>
+</tr>
+<tr>
+<td>L2 Cache</td>
+<td>~10 cycles</td>
+<td>256KB</td>
+<td></td>
+</tr>
+<tr>
+<td>L3 Cache</td>
+<td>~40 cycles</td>
+<td>8MB</td>
+<td></td>
+</tr>
+<tr>
+<td>Main Memory</td>
+<td>~200 cycles</td>
+<td>8GB</td>
+<td></td>
+</tr>
+<tr>
+<td>SSD/HDD</td>
+<td>~10^6 cycles</td>
+<td>~1TB</td>
+<td>Slowest</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Registers</strong>: Fastest, smallest storage for immediate computations.</li>
+<li><strong>Caches (L1, L2, L3)</strong>: Store frequently accessed data; sizes like 32KB (L1) or 256KB (L2) are typical for modern CPUs.</li>
+<li><strong>Main Memory (RAM)</strong>: Holds program data and instructions.</li>
+<li><strong>Storage (SSD/HDD)</strong>: Persistent, slowest storage.</li>
+</ul>
+<h3 id="cache-principles">Cache Principles</h3>
+<p>Caches reduce memory access time by keeping recently used data near the CPU:</p>
+<ul>
+<li><strong>Cache Line</strong>: The smallest unit of data transferred between cache and main memory, typically 64 bytes. When data is fetched, the entire cache line is loaded, not just the requested byte, to exploit spatial locality.</li>
+<li><strong>Cache Hit</strong>: Occurs when requested data is found in the cache, providing fast access (e.g., 3 cycles for L1).</li>
+<li><strong>Cache Miss</strong>: Occurs when data isn’t in the cache, requiring a fetch from slower memory (e.g., 200 cycles from RAM), which is costly.</li>
+<li><strong>Cache Eviction</strong>: When the cache is full, older data is replaced (evicted) to make space, often using policies like Least Recently Used (LRU).</li>
+</ul>
+<p><strong>Why It Matters</strong>: <em>Efficient cache use minimizes misses, leveraging the speed of cache over RAM</em>.</p>
+<h3 id="why-cache-matters-understanding-cache-locality">Why Cache Matters: Understanding Cache Locality</h3>
+<p>In this lab, we explore <strong>cache locality</strong> and its significant impact on program performance. Cache locality refers to the principle that programs tend to access a small portion of their address space repeatedly over a short period. This concept is divided into two types:</p>
+<ul>
+<li><strong>Temporal locality</strong>: Accessing the same data multiple times within a short timeframe, such as a variable reused in a loop (e.g., the <code>sum</code> variable in our performance example).</li>
+<li><strong>Spatial locality</strong>: Accessing data that is stored close together in memory, like consecutive elements in an array.</li>
+</ul>
+<p>Modern processors use <strong>caches</strong>—small, fast memory units—to take advantage of these localities. When data is accessed, it’s loaded into the cache along with nearby data, making subsequent accesses faster. Poor access patterns, however, can lead to <strong>cache misses</strong>, which slow down execution due to the need to fetch data from slower main memory.</p>
+<p>To illustrate this, assume that we have an array of 12 integers. To calculate the sum, we need to traverse the array elements. There are two major methods: sequential traversal and strided traversal. Consider the following diagram:</p>
+<figure>
+<p><a class="glightbox" href="../../images/sequential.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cache Access Patterns" src="../../images/sequential.png" /></a></p>
+<figcaption>
+<p>Figure 1: Diagram showing sequential memory access pattern: <span class="arithmatex">\(a[0] \to a[1] \to a[2] \to \cdots \to a[11]\)</span>.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="../../images/strided.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cache Access Patterns" src="../../images/strided.png" /></a></p>
+<figcaption>
+<p>Figure 2: Diagram showing strided memory access pattern: <span class="arithmatex">\(a[0] \to a[4] \to a[8] \to a[1] \to a[5] \to a[9] \to \cdots \to a[11]\)</span> 
+The top section shows strided access with a stride of 4, grouping elements into color-coded sets. The bottom section reinterprets the array as a 3x4 matrix, highlighting how strided access aligns with column-wise traversal.</p>
+</figcaption>
+</figure>
+<p>The above diagrams depict two memory access patterns for an array with elements labeled <span class="arithmatex">\( a_0 \)</span> to <span class="arithmatex">\( a_{11} \)</span>:</p>
 <ol>
 <li>
-<p>Declare a mutex variable (globally) as follows:
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mtx</span><span class="p">;</span>
-</span></code></pre></div></p>
+<p><strong>Sequential traversal</strong>: Elements are accessed in order (<span class="arithmatex">\( a_0 \to a_1 \to a_2 \to \ldots \to a_{11} \)</span>), shown by black arrows. This maximizes <strong>spatial locality</strong> because consecutive elements are stored contiguously and often fit within the same <strong>cache line</strong>. Loading a cache line brings multiple elements into the cache, reducing cache misses during sequential access.</p>
 </li>
 <li>
-<p>Initialize the mutex (should be initialized before forking any thread):
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mtx</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>Finally, protect the critical section by using the mutex:
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">start</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="hll"><span class="w">    </span><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mtx</span><span class="p">);</span>
-</span></span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="hll"><span class="w">    </span><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mtx</span><span class="p">);</span>
-</span></span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span>
-</span></code></pre></div></p>
+<p><strong>Strided traversal</strong>: Elements are accessed with a fixed stride, such as every fourth element (<span class="arithmatex">\( a_0 \to a_4 \to a_8 \)</span>, then <span class="arithmatex">\( a_1 \to a_5 \to a_9 \)</span>, etc.), indicated by colored arrows. This can disrupt spatial locality if the stride causes each access to land in a different cache line, increasing cache misses.</p>
 </li>
 </ol>
-<div class="admonition exercise">
-<p class="admonition-title">Exercise (2)</p>
-<p>Goto OnlineGDB by clicking the following button:</p>
-<p><a class="md-button" href="https://onlinegdb.com/vSMllSHVR">Exercise Lab3c</a></p>
-<ol>
-<li>Run this program several times (at least five times) and observe the output. What did you observe? Why?</li>
-<li>What is the running time of the parallelized part? </li>
-<li>Modify the program to reduce the synchronization overhead. See slide 36 "Version 3" of Unit 1.</li>
-<li>What is the running time of the parallelized part after modification?</li>
-<li>Calculate the speedup and the efficiency of your program.<ul>
-<li>[Hint] To calculate <span class="arithmatex">\(T_{serial}\)</span>, you may set <code>NP</code> to 1. Run the program several times and take the minimum value.</li>
-</ul>
-</li>
-<li>Is your program weakly scalable or strongly scalable? Explain your answer.</li>
-</ol>
-</div>
-<div class="admonition exercise">
-<p class="admonition-title">Exercise (3)</p>
-<p><a class="glightbox" href="../../images/dart.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="left" alt="Dart" src="../../images/dart.jpg" width="160" /></a></p>
-<p>Suppose we toss darts randomly at a square dartboard, whose bullseye is at the origin, and whose sides are two feet in length. Suppose also that there’s a circle inscribed in the square dartboard. The radius of the circle is 1 foot, and its area is <span class="arithmatex">\(\pi\)</span> square feet. If the points that are hit by the darts are uniformly distributed (and we always hit the square), then the number of darts that hit inside the circle should approximately satisfy the equation: </p>
-<div class="arithmatex">\[
-    \frac{\text{number in circle}}{\text{total number of tosses}} = \frac{\pi}{4},
-\]</div>
-<p>since the ratio of the area of the circle to the area of the square is <span class="arithmatex">\(\pi/4\)</span>.</p>
-<p>We can use this formula to estimate the value of <span class="arithmatex">\(\pi\)</span> with a random number generator:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>number_in_circle = 0;
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>for ( toss = 0; toss &lt; number_of_tosses; toss++) {
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    x = random double between −1 and 1;
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    y = random double between −1 and 1;
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    distance_squared = x∗x + y∗y;
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    if ( distance_squared &lt;= 1)
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        number_in_circle ++;
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>}
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>pi_estimate = 4 ∗ number_in_circle / (( double) number_of_tosses);
+<p>The diagram’s bottom section reinterprets the array as a 3x4 matrix with rows (<span class="arithmatex">\( a_0, a_1, a_2, a_3 \)</span>), (<span class="arithmatex">\( a_4, a_5, a_6, a_7 \)</span>), and (<span class="arithmatex">\( a_8, a_9, a_{10}, a_{11} \)</span>). Here, strided access (e.g., <span class="arithmatex">\( a_0, a_4, a_8 \)</span>) corresponds to a column-wise traversal. In C++, arrays use <strong>row-major order</strong>, meaning rows are contiguous in memory. Column-wise access jumps across rows, leading to non-contiguous memory access and potentially more cache misses.</p>
+<p>The performance example in this lab brings these concepts to life. By comparing the execution times of sequential (row-wise) and strided (column-wise) access on a large array, you’ll see the tangible impact of cache locality. In the code, the variable <code>sum</code> exemplifies <strong>temporal locality</strong> because it is repeatedly updated within the loop as each element is processed. When <code>sum</code> fits in a CPU register or remains in the cache, it avoids costly memory fetches, enhancing performance. Sequential access will run faster due to better spatial locality, while strided access suffers from poor cache utilization, allowing you to perceive how memory access patterns affect execution time.</p>
+<p>Mastering cache locality is key to writing efficient code, particularly in performance-critical fields like scientific computing, graphics, and machine learning. Optimizing data access patterns to align with locality principles can yield significant speedups without changing the core algorithm.</p>
+<p>Now, let’s dive into the performance demonstration.</p>
+<h3 id="performance-demonstration-sequential-vs-strided-access">Performance Demonstration: Sequential vs. Strided Access</h3>
+<div class="language-c++ select copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">64</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"> </span><span class="c1">// 64MB array (larger than cache)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">// Cache-friendly: sequential access</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sum_sequential</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">// Cache-unfriendly: strided access</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sum_strided</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">stride</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iteration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">iteration</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">stride</span><span class="p">;</span><span class="w"> </span><span class="n">iteration</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iteration</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">stride</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="p">}</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;=== Cache Locality Demonstration ===</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">data</span><span class="p">(</span><span class="n">ARRAY_SIZE</span><span class="p">);</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ARRAY_SIZE</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_sequential</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sequential_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_strided</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">strided_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Sequential sum: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; (Time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sequential_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Strided sum: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; (Time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">strided_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Performance ratio: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">strided_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">sequential_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x slower</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>This is called a <strong>Monte Carlo</strong> method, since it uses randomness (the dart tosses).</p>
-<p>Write a Pthreads program that uses a Monte Carlo method to estimate <span class="arithmatex">\(\pi\)</span>. The main thread should read in the total number of tosses and print the estimate. You may want to use long long ints for the number of hits in the circle and the number of tosses, since both may have to be very large to get a reasonable estimate of <span class="arithmatex">\(\pi\)</span>. You may want to use <code class="language-c++ highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> ints for the number of hits in the circle and the number of tosses, since both may have to be very large to get a reasonable estimate of <span class="arithmatex">\(\pi\)</span>.</p>
-<p>Source: Textbook, page 219, programming assignment #4.2</p>
+<p><strong>Sample Output</strong> (varies by system):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>=== Cache Locality Demonstration ===
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Sequential sum: 33520818816 (Time: 181 ms)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Strided sum: 33520818816 (Time: 881 ms)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Performance ratio: 4.8674x slower
+</span></code></pre></div></p>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li><strong>Sequential Access</strong>: Iterates contiguously, loading cache lines (e.g., 64 bytes, or 16 integers) that are fully utilized, minimizing misses. The <code>sum</code> variable benefits from temporal locality as it’s updated repeatedly in the cache or a register.</li>
+<li><strong>Strided Access</strong>: Jumps by 1024 elements (4096 bytes), likely requiring a new cache line per access, increasing misses. The <code>sum</code> variable still exhibits temporal locality, but the overall performance suffers due to poor spatial locality of the array accesses.</li>
+<li><strong>Connection to Pthreads</strong>: In your Pthreads labs, you’ve split arrays across threads. Poor locality in each thread’s access pattern (e.g., strided access) would amplify cache misses in parallel programs.</li>
+</ul>
+<h2 id="2-array-access-patterns-and-performance">2. Array Access Patterns and Performance</h2>
+<h3 id="row-major-vs-column-major-access">Row-Major vs. Column-Major Access</h3>
+<p>In C/C++, two-dimensional arrays are stored in <strong>row-major order</strong>, meaning rows are contiguous in memory. This storage pattern makes row-wise access cache-friendly, while column-wise access is less efficient due to poor cache utilization.</p>
+<h4 id="visual-explanation">Visual Explanation</h4>
+<p>Consider a 3x4 matrix stored in row-major order, as shown in Figure 3, with a 16-byte cache line.</p>
+<figure>
+<p><a class="glightbox" href="../../images/cacheline.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cache Line" src="../../images/cacheline.png" /></a></p>
+<figcaption>
+<p>Figure 3: Illustration of a 3x4 matrix in row-major order and its interaction with a 16-byte cache line.</p>
+</figcaption>
+</figure>
+<ul>
+<li>
+<p><strong>Row-Major Access (Sequential Traversal)</strong>:</p>
+<ul>
+<li>Elements are accessed in the order: <code>[0,0] → [0,1] → [0,2] → [0,3] → [1,0] → ...</code>.</li>
+<li><strong>Process</strong>:<ul>
+<li>When <code>[0,0]</code> is accessed for the first time, a cache miss occurs, and the CPU fetches 16 bytes from main memory, loading elements <code>[0,0]</code>, <code>[0,1]</code>, <code>[0,2]</code>, and <code>[0,3]</code> into the cache (assuming each element is 4 bytes).</li>
+<li>When <code>[0,1]</code> is accessed, a cache hit occurs, as it is already in the cache.</li>
+<li>This pattern continues, with cache misses occurring only when a new row is accessed (e.g., transitioning from <code>[0,3]</code> to <code>[1,0]</code>). For the entire 3x4 matrix, approximately three cache misses are expected—one per row.</li>
+</ul>
+</li>
+<li><strong>Outcome</strong>: This sequential traversal maximizes spatial locality, efficiently utilizing the cache line and minimizing misses.</li>
+</ul>
+</li>
+<li>
+<p><strong>Column-Major Access (Strided Traversal)</strong>:</p>
+<ul>
+<li>Elements are accessed in the order: <code>[0,0] → [1,0] → [2,0] → [0,1] → ...</code>.</li>
+<li><strong>Process</strong>:<ul>
+<li>When <code>[0,0]</code> is accessed for the first time, a cache miss occurs, and the CPU fetches 16 bytes from main memory, loading <code>[0,0]</code>, <code>[0,1]</code>, <code>[0,2]</code>, and <code>[0,3]</code> into the cache.</li>
+<li>When <code>[1,0]</code> is accessed, another cache miss occurs because <code>[1,0]</code> is not contiguous with the previous cache line. The CPU fetches a new 16-byte block, loading <code>[1,0]</code>, <code>[1,1]</code>, <code>[1,2]</code>, and <code>[1,3]</code>.</li>
+<li>When <code>[2,0]</code> is accessed, a third cache miss is triggered, loading a new cache line (e.g., <code>[2,0]</code>, <code>[2,1]</code>, <code>[2,2]</code>, <code>[2,3]</code>). If the cache is small or full, the initial cache line (e.g., <code>[0,0]</code> to <code>[0,3]</code>) may be evicted to accommodate this new data.</li>
+<li><strong>Observation</strong>: The cache line is underutilized, as only one element per 16-byte block is used before the next miss. In a fully occupied or small cache, this leads to frequent cache misses and evictions.</li>
+</ul>
+</li>
+<li><strong>Outcome</strong>: This strided traversal results in poor spatial locality, causing multiple cache misses and degraded performance.</li>
+</ul>
+</li>
+</ul>
+<div class="language-c++ select copy highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ROWS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4000</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">COLS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4000</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sum_row_major</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">matrix</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ROWS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COLS</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">sum_column_major</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">matrix</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COLS</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ROWS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="p">}</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;=== Row-Major vs Column-Major Access ===</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">ROWS</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">COLS</span><span class="p">));</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ROWS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COLS</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">            </span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_row_major</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">row_major_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum_column_major</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">col_major_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Row-major sum: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; (Time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">row_major_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Column-major sum: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; (Time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">col_major_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Performance ratio: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">col_major_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">row_major_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x slower</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="3-cache-friendly-data-structures">3. Cache-Friendly Data Structures</h2>
+<h3 id="structure-of-arrays-soa-vs-array-of-structures-aos">Structure of Arrays (SoA) vs. Array of Structures (AoS)</h3>
+<p>A <strong>particle system</strong> is a computational model used to simulate a collection of many individual particles, each with properties like position, velocity, and mass. These systems are widely used in fields such as physics simulations (e.g., molecular dynamics), computer graphics (e.g., smoke, fire, or fluid effects), and game development (e.g., crowd or debris animations). The importance of optimizing particle systems lies in their computational intensity—updating thousands or millions of particles in real-time requires efficient memory access to achieve acceptable performance. Poor cache utilization can lead to significant bottlenecks, making cache-friendly data structures critical for scalability and speed. In this section, we explore two approaches, <strong>Array of Structures (AoS)</strong> and <strong>Structure of Arrays (SoA)</strong>, to organize particle data, particularly focusing on velocity components (vx, vy, vz), which represent the speed along the x, y, and z axes, respectively.</p>
+<ul>
+<li>
+<p><strong>Array of Structures (AoS)</strong>:</p>
+<ul>
+<li><strong>Design</strong>: Each particle is represented as a single structure containing all its attributes—position (<code>x</code>, <code>y</code>, <code>z</code>), velocity (<code>vx</code>, <code>vy</code>, <code>vz</code>), mass, and a unique identifier (<code>id</code>). These structures are stored in a contiguous array.</li>
+<li><strong>Memory Layout</strong>: For <code>N</code> particles, the memory is organized as <code>[Particle 0 {x, y, z, vx, vy, vz, mass, id}, Particle 1 {x, y, z, vx, vy, vz, mass, id}, ...]</code>. This groups all data for a single particle together.</li>
+<li><strong>Access Pattern</strong>: When updating a particle’s position (e.g., <code>x += vx * dt</code>), the CPU accesses all attributes of one particle sequentially. However, if the operation focuses on a single attribute (e.g., updating all <code>vx</code> values), the access jumps between non-contiguous memory locations across particles, potentially causing cache misses.</li>
+<li><strong>Advantages</strong>: Intuitive for per-particle operations and easier to manage when each particle’s data is processed as a unit (e.g., in object-oriented designs).</li>
+<li><strong>Disadvantages</strong>: Poor spatial locality for component-wise operations, as unused fields (e.g., <code>mass</code>) are loaded into the cache alongside the needed ones, wasting bandwidth.</li>
+</ul>
+</li>
+<li>
+<p><strong>Structure of Arrays (SoA)</strong>:</p>
+<ul>
+<li><strong>Design</strong>: Each attribute of the particles (e.g., <code>x</code>, <code>vx</code>, <code>mass</code>) is stored in a separate array, and all arrays are of the same length (<code>N</code>). A <code>ParticleSystem</code> structure groups these arrays together.</li>
+<li><strong>Memory Layout</strong>: For <code>N</code> particles, the memory is organized as <code>[x[0], x[1], ...], [y[0], y[1], ...], [z[0], z[1], ...], [vx[0], vx[1], ...], ...]</code>. This separates attributes into contiguous blocks.</li>
+<li><strong>Access Pattern</strong>: When updating positions (e.g., <code>x[i] += vx[i] * dt</code>), the CPU accesses consecutive elements of the <code>x</code> and <code>vx</code> arrays, aligning with cache lines and improving spatial locality. This is especially beneficial for vectorized operations (e.g., SIMD instructions) that process multiple particles’ <code>vx</code> values simultaneously.</li>
+<li><strong>Advantages</strong>: Excellent spatial locality for component-wise updates, reducing cache misses and enabling efficient parallel processing. It also allows selective loading of only the required attributes into the cache.</li>
+<li><strong>Disadvantages</strong>: Less intuitive for per-particle operations, requiring more complex indexing, and may increase memory overhead due to separate allocations.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Performance Impact</strong>: The choice between AoS and SoA depends on the workload. For particle system simulations where velocity components (<code>vx</code>, <code>vy</code>, <code>vz</code>) are updated uniformly across all particles (e.g., applying a global force), SoA typically outperforms AoS. This is because SoA ensures that all <code>vx</code> values are contiguous, allowing the cache to load them efficiently, whereas AoS scatters these values across particle structures, leading to more cache line fetches.</p>
+<p><strong>Implementation Example</strong>:</p>
+<div class="language-c++ select copy highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NUM_PARTICLES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000000</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Particle</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">vy</span><span class="p">,</span><span class="w"> </span><span class="n">vz</span><span class="p">;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">};</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ParticleSystem</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">vy</span><span class="p">,</span><span class="w"> </span><span class="n">vz</span><span class="p">;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="n">ParticleSystem</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                              </span><span class="n">vx</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">vy</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">vz</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">                              </span><span class="n">mass</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">id</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="p">};</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="kt">void</span><span class="w"> </span><span class="nf">update_positions_aos</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Particle</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">particles</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">particles</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">        </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">vz</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="p">}</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="kt">void</span><span class="w"> </span><span class="nf">update_positions_soa</span><span class="p">(</span><span class="n">ParticleSystem</span><span class="o">&amp;</span><span class="w"> </span><span class="n">system</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">system</span><span class="p">.</span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">system</span><span class="p">.</span><span class="n">vx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">system</span><span class="p">.</span><span class="n">vy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">system</span><span class="p">.</span><span class="n">vz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="p">}</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;=== Array of Structures vs Structure of Arrays ===</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Particle</span><span class="o">&gt;</span><span class="w"> </span><span class="n">particles</span><span class="p">(</span><span class="n">NUM_PARTICLES</span><span class="p">);</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_PARTICLES</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">        </span><span class="n">particles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">                        </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">};</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">    </span><span class="n">ParticleSystem</span><span class="w"> </span><span class="n">system</span><span class="p">(</span><span class="n">NUM_PARTICLES</span><span class="p">);</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_PARTICLES</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">vx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="p">.</span><span class="n">vy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">system</span><span class="p">.</span><span class="n">vz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span>
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">mass</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span>
+</span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="w">        </span><span class="n">system</span><span class="p">.</span><span class="n">id</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+</span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.01f</span><span class="p">;</span>
+</span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iterations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+</span><span id="__span-3-62"><a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>
+</span><span id="__span-3-63"><a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-3-64"><a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">iterations</span><span class="p">;</span><span class="w"> </span><span class="n">iter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-65"><a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="w">        </span><span class="n">update_positions_aos</span><span class="p">(</span><span class="n">particles</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+</span><span id="__span-3-66"><a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-67"><a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-3-68"><a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">aos_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-3-69"><a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>
+</span><span id="__span-3-70"><a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-3-71"><a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">iterations</span><span class="p">;</span><span class="w"> </span><span class="n">iter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-72"><a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="w">        </span><span class="n">update_positions_soa</span><span class="p">(</span><span class="n">system</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+</span><span id="__span-3-73"><a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-74"><a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a><span class="w">    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-3-75"><a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">soa_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-3-76"><a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>
+</span><span id="__span-3-77"><a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;AoS update time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">aos_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-3-78"><a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;SoA update time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">soa_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-3-79"><a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Performance improvement: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">aos_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">soa_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x faster</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-3-80"><a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>
+</span><span id="__span-3-81"><a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-82"><a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>In the example, SoA often outperforms AoS because it loads only the necessary velocity components (<code>vx</code>, <code>vy</code>, <code>vz</code>) and positions (<code>x</code>, <code>y</code>, <code>z</code>) into the cache, avoiding the overhead of fetching unused attributes like <code>mass</code> or <code>id</code>. The contiguous memory layout of SoA aligns with cache lines (e.g., 64 bytes), enabling efficient use of spatial locality.</li>
+<li>The performance difference becomes more pronounced with larger <code>NUM_PARTICLES</code> or when vectorization (e.g., using SIMD instructions) is applied, as SoA’s structure is inherently compatible with such optimizations.</li>
+<li>However, if the simulation requires frequent per-particle operations (e.g., computing forces based on <code>mass</code> and <code>id</code> for each particle), AoS might be more practical due to its cohesive data grouping, though it may still suffer from cache inefficiency.</li>
+</ul>
+<p><strong>Practical Considerations</strong>:</p>
+<ul>
+<li><strong>Cache Size</strong>: The effectiveness of SoA increases with larger datasets that exceed L1 cache (e.g., 32KB), as it ensures only relevant data is cached.</li>
+<li><strong>Alignment</strong>: Ensure arrays in SoA are properly aligned (e.g., to 64-byte boundaries) to maximize cache line utilization, which can be achieved using compiler directives like <code>__attribute__((aligned(64)))</code> in GCC.</li>
+<li><strong>Hybrid Approaches</strong>: In some cases, a hybrid model (e.g., grouping a few related attributes into small structures within an SoA-like layout) can balance locality and usability, depending on the specific workload.</li>
+</ul>
+<p>This section equips you with the knowledge to choose the appropriate data structure based on the access patterns of your particle simulation, optimizing for cache performance in real-world applications like physics engines or computational fluid dynamics.</p>
+<hr />
+<h2 id="4-matrix-multiplication-the-ultimate-cache-challenge">4. Matrix Multiplication: The Ultimate Cache Challenge</h2>
+<h3 id="why-matrix-multiplication-matters">Why Matrix Multiplication Matters</h3>
+<p>Matrix multiplication is key in scientific computing, graphics, machine learning, and more, with O(n³) complexity making cache optimization critical.</p>
+<h3 id="naive-matrix-multiplication-ijk-order">Naive Matrix Multiplication (ijk order)</h3>
+<p>If <span class="arithmatex">\(A\)</span> is an <span class="arithmatex">\(n \times m\)</span> matrix and <span class="arithmatex">\(B\)</span> is an <span class="arithmatex">\(m \times p\)</span> matrix, then the matrix <span class="arithmatex">\(C = A \times B\)</span> can be computed as follows:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    for (int i=0; i&lt;n; i++)
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>        for (int j=0; j&lt;p; j++) {
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>            c[i,j] = 0;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>            for (k=0; k&lt;m; k++)
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>                c[i,j] += a[i,k] * b[k,j];
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        }
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    }
+</span></code></pre></div></p>
+<p>This naive algorithm accesses matrix <span class="arithmatex">\(A\)</span> using sequential traversal and matrix <span class="arithmatex">\(B\)</span> using strided traversal. Consequently, the execution time of <code>c[i,j] += a[i,k] + b[k,j]</code> is hinged with the strided access of matrix <span class="arithmatex">\(B\)</span>.</p>
+<h3 id="cache-blocking-tiling">Cache Blocking (Tiling)</h3>
+<p><strong>Explanation</strong>: Cache blocking divides matrices into smaller blocks (e.g., 64x64) that fit in the cache. Instead of processing the entire matrix at once, it computes results for one block at a time, reusing data while it’s still in the cache. This improves <strong>temporal locality</strong> (reusing data) and <strong>spatial locality</strong> (accessing contiguous memory), reducing cache misses.</p>
+<p>For more explanation, please check this Youtube video</p>
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b_js5-gkZUI?si=C9tqe8rRys4KMA8p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Matrix</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">private</span><span class="o">:</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">data</span><span class="p">;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rows</span><span class="p">,</span><span class="w"> </span><span class="n">cols</span><span class="p">;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">public</span><span class="o">:</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="n">Matrix</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">rows</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"> </span><span class="n">cols</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">));</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">randomize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">random_device</span><span class="w"> </span><span class="n">rd</span><span class="p">;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">mt19937</span><span class="w"> </span><span class="nf">gen</span><span class="p">(</span><span class="n">rd</span><span class="p">());</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">uniform_real_distribution</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">dis</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">cols</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dis</span><span class="p">(</span><span class="n">gen</span><span class="p">);</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">()(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="p">()(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">getRows</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">rows</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">getCols</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">cols</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="p">};</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">Matrix</span><span class="w"> </span><span class="nf">multiply_naive</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">getRows</span><span class="p">();</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="n">Matrix</span><span class="w"> </span><span class="n">C</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">                </span><span class="n">C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="p">}</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="n">Matrix</span><span class="w"> </span><span class="nf">multiply_blocked</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="o">&amp;</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Matrix</span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">block_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">getRows</span><span class="p">();</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">    </span><span class="n">Matrix</span><span class="w"> </span><span class="n">C</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">ii</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">block_size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">jj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">block_size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">kk</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">block_size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">i_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">ii</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">j_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">jj</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">k_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">kk</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ii</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i_max</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kk</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">k_max</span><span class="p">;</span><span class="w"> </span><span class="n">k</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="w">                        </span><span class="kt">double</span><span class="w"> </span><span class="n">a_ik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">);</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="w">                        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jj</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j_max</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="w">                            </span><span class="n">C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">a_ik</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">);</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="p">}</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">512</span><span class="p">;</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="w">    </span><span class="n">Matrix</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">B</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="w">    </span><span class="n">A</span><span class="p">.</span><span class="n">randomize</span><span class="p">();</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">randomize</span><span class="p">();</span>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>
+</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="w">    </span><span class="n">Matrix</span><span class="w"> </span><span class="n">C1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply_naive</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">);</span>
+</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">naive_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="w">    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="w">    </span><span class="n">Matrix</span><span class="w"> </span><span class="n">C2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply_blocked</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">);</span>
+</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="w">    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">blocked_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>
+</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Naive time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">naive_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Blocked time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">blocked_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ms</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Improvement: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">naive_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">blocked_time</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x faster</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-77"><a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<p>Below is a new exercise to replace the previous one, offering a fresh challenge while aligning with the lab's focus on cache locality and memory access optimization. This exercise involves optimizing a simple 1D array summation with a stride, building on the concepts of sequential and strided traversal introduced earlier. It leverages the lab's existing tools (e.g., <code>chrono</code> library) and encourages students to explore cache behavior without requiring complex data structures like those in the particle system.</p>
+<hr />
+<h2 id="exercise-optimizing-strided-array-summation">Exercise: Optimizing Strided Array Summation</h2>
+<p>Implement a program to compute the sum of a large 1D array (<code>ARRAY_SIZE = 64 * 1024 * 1024</code>) using both sequential and strided traversal patterns. Optimize the strided traversal to improve cache performance and compare the results with the sequential approach.</p>
+<h3 id="instructions">Instructions</h3>
+<ol>
+<li><strong>Setup</strong>:</li>
+<li>
+<p>Use a <code>std::vector&lt;int&gt;</code> with <code>ARRAY_SIZE = 64 * 1024 * 1024</code> to store the array, initialized with random values (e.g., <code>i % 1000</code>).</p>
+</li>
+<li>
+<p><strong>Implementation</strong>:</p>
+</li>
+<li>Write a <code>sum_sequential</code> function that computes the sum by accessing array elements consecutively (e.g., <code>arr[i]</code> from <code>i = 0</code> to <code>ARRAY_SIZE - 1</code>).</li>
+<li>Write a <code>sum_strided</code> function that computes the sum with a stride of 1024 (e.g., <code>arr[i]</code> where <code>i</code> increases by 1024 each step, covering all elements through multiple passes).</li>
+<li>Optimize the <code>sum_strided</code> function by experimenting with a smaller stride (e.g., 16 or 32) or aligning the array to a 64-byte boundary using <code>__attribute__((aligned(64)))</code> in GCC.</li>
+<li>
+<p>Measure execution time for both the original and optimized versions using the <code>chrono</code> library.</p>
+</li>
+<li>
+<p><strong>Comparison</strong>:</p>
+</li>
+<li>Run the program and record the time taken for the sequential sum, the original strided sum, and the optimized strided sum.</li>
+<li>
+<p>Calculate the performance ratio (e.g., original strided time / optimized strided time) to quantify the improvement.</p>
+</li>
+<li>
+<p><strong>Analysis</strong>:</p>
+</li>
+<li>Explain why the optimized strided version (if faster) improves performance, focusing on cache locality (spatial and temporal).</li>
+<li>Discuss how changing the array size (e.g., to 16 * 1024 * 1024 or 256 * 1024 * 1024) or cache line size might affect the results.</li>
+</ol>
+<h3 id="submission">Submission</h3>
+<ul>
+<li>Include your code with your name and index at the top.</li>
+<li>Take screenshots of your code and performance results, highlighting the timings for all versions.</li>
+<li>Provide a brief written analysis (1-2 paragraphs) in your submission document.</li>
+<li>Compile all materials into a Word document, convert to PDF, and upload to the LMS.</li>
+</ul>
 
 
 
