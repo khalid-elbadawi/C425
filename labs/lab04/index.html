@@ -1500,31 +1500,35 @@ The top section shows strided access with a stride of 4, grouping elements into 
 <p>Implement a program to compute the sum of a large 1D array (<code>ARRAY_SIZE = 64 * 1024 * 1024</code>) using both sequential and strided traversal patterns. Optimize the strided traversal to improve cache performance and compare the results with the sequential approach.</p>
 <h3 id="instructions">Instructions</h3>
 <ol>
-<li><strong>Setup</strong>:</li>
 <li>
-<p>Use a <code>std::vector&lt;int&gt;</code> with <code>ARRAY_SIZE = 64 * 1024 * 1024</code> to store the array, initialized with random values (e.g., <code>i % 1000</code>).</p>
+<p><strong>Setup</strong>:</p>
+<ul>
+<li>Use a <code>std::vector&lt;int&gt;</code> with <code>ARRAY_SIZE = 64 * 1024 * 1024</code> to store the array, initialized with random values (e.g., <code>i % 1000</code>).</li>
+</ul>
 </li>
 <li>
 <p><strong>Implementation</strong>:</p>
-</li>
+<ul>
 <li>Write a <code>sum_sequential</code> function that computes the sum by accessing array elements consecutively (e.g., <code>arr[i]</code> from <code>i = 0</code> to <code>ARRAY_SIZE - 1</code>).</li>
 <li>Write a <code>sum_strided</code> function that computes the sum with a stride of 1024 (e.g., <code>arr[i]</code> where <code>i</code> increases by 1024 each step, covering all elements through multiple passes).</li>
 <li>Optimize the <code>sum_strided</code> function by experimenting with a smaller stride (e.g., 16 or 32) or aligning the array to a 64-byte boundary using <code>__attribute__((aligned(64)))</code> in GCC.</li>
-<li>
-<p>Measure execution time for both the original and optimized versions using the <code>chrono</code> library.</p>
+<li>Measure execution time for both the original and optimized versions using the <code>chrono</code> library.</li>
+</ul>
 </li>
 <li>
 <p><strong>Comparison</strong>:</p>
-</li>
+<ul>
 <li>Run the program and record the time taken for the sequential sum, the original strided sum, and the optimized strided sum.</li>
-<li>
-<p>Calculate the performance ratio (e.g., original strided time / optimized strided time) to quantify the improvement.</p>
+<li>Calculate the performance ratio (e.g., original strided time / optimized strided time) to quantify the improvement.</li>
+</ul>
 </li>
 <li>
 <p><strong>Analysis</strong>:</p>
-</li>
+<ul>
 <li>Explain why the optimized strided version (if faster) improves performance, focusing on cache locality (spatial and temporal).</li>
 <li>Discuss how changing the array size (e.g., to 16 * 1024 * 1024 or 256 * 1024 * 1024) or cache line size might affect the results.</li>
+</ul>
+</li>
 </ol>
 <h3 id="submission">Submission</h3>
 <ul>
