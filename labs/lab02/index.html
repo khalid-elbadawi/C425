@@ -11,14 +11,13 @@
         <link rel="canonical" href="https://khalid-elbadawi.github.io/C425/labs/lab02/">
       
       
-        <link rel="prev" href="../lab01/">
       
       
-        <link rel="next" href="../lab03/">
+        
       
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -26,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -60,7 +59,6 @@
     
       
 
-    
     
     
    <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -275,9 +273,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
     
   </span>
+  
   
 
             </a>
@@ -287,7 +290,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-            Home
+            
+  
+    Home
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -304,20 +311,10 @@
       
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -330,11 +327,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -342,18 +339,27 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Labs
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Labs
+            
+  
+    Labs
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -369,628 +375,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Lab(1): Introduction to Pthread
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lab(2): Thread Synchronization
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab(2): Thread Synchronization
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lab-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lab Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lab-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lab Objectives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lab-submission" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lab Submission
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-the-race-condition-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. The Race Condition Problem
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. The Race Condition Problem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-race-condition" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a Race Condition?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#a-simple-example-shared-counter" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Simple Example: Shared Counter
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-does-this-happen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Does This Happen?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-output-results-will-vary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sample Output (Results Will Vary!)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-mutexes-the-solution-to-race-conditions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Mutexes: The Solution to Race Conditions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Mutexes: The Solution to Race Conditions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-mutex" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a Mutex?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutex-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mutex Operations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fixing-our-counter-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fixing Our Counter Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sample-output-now-consistent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sample Output (Now Consistent!)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#critical-section-guidelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      Critical Section Guidelines
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-understanding-semaphores" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Understanding Semaphores
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Understanding Semaphores">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-semaphore" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a Semaphore?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What is a Semaphore?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#types-of-semaphores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types of Semaphores
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#posix-semaphores-in-cc" class="md-nav__link">
-    <span class="md-ellipsis">
-      POSIX Semaphores in C/C++
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Functions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compilation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mutual-exclusion-with-semaphores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mutual Exclusion with Semaphores
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mutual Exclusion with Semaphores">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-protecting-a-shared-counter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Protecting a Shared Counter
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-semaphore-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How Semaphore Works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Example
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enforcing-execution-order-with-semaphores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enforcing Execution Order with Semaphores
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Enforcing Execution Order with Semaphores">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-ordered-printing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Ordered Printing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-example_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simulation-of-a-smart-parking-garage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simulation of a Smart Parking Garage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Simulation of a Smart Parking Garage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scenario-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scenario Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-the-producer-consumer-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. The Producer-Consumer Problem
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. The Producer-Consumer Problem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#concept_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concept
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Concept">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problem-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Problem Description
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#challenges-to-solve" class="md-nav__link">
-    <span class="md-ellipsis">
-      Challenges to Solve
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-multi-threaded-buffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Multi-Threaded Buffer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example: Multi-Threaded Buffer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-the-solution-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How the Solution Works
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thread-synchronization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Thread Synchronization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercises
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exercises">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exercise-110-points-enforcing-ordering-for-3-threads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercise 1[10 points]: Enforcing Ordering for 3 Threads
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercise-220-points-thread-safe-bank-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercise 2[20 points]: Thread-Safe Bank Account
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercise-320-points-multi-threaded-file-processing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercise 3[20 points]: Multi-threaded File Processing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab03/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab(3): Data Parallelism
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab04/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab (4): Cache Locality and Memory Access Optimization
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab05/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Lab (5): Shared Memory Programming Using OpenMP
-    
-  </span>
   
 
       </a>
@@ -1033,7 +425,9 @@
         <li class="md-nav__item">
   <a href="#lab-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab Overview
+      
+        Lab Overview
+      
     </span>
   </a>
   
@@ -1042,7 +436,9 @@
         <li class="md-nav__item">
   <a href="#lab-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab Objectives
+      
+        Lab Objectives
+      
     </span>
   </a>
   
@@ -1051,7 +447,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1060,7 +458,9 @@
         <li class="md-nav__item">
   <a href="#lab-submission" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab Submission
+      
+        Lab Submission
+      
     </span>
   </a>
   
@@ -1069,7 +469,9 @@
         <li class="md-nav__item">
   <a href="#1-the-race-condition-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      1. The Race Condition Problem
+      
+        1. The Race Condition Problem
+      
     </span>
   </a>
   
@@ -1079,7 +481,9 @@
           <li class="md-nav__item">
   <a href="#what-is-a-race-condition" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Race Condition?
+      
+        What is a Race Condition?
+      
     </span>
   </a>
   
@@ -1088,7 +492,9 @@
           <li class="md-nav__item">
   <a href="#a-simple-example-shared-counter" class="md-nav__link">
     <span class="md-ellipsis">
-      A Simple Example: Shared Counter
+      
+        A Simple Example: Shared Counter
+      
     </span>
   </a>
   
@@ -1097,7 +503,9 @@
           <li class="md-nav__item">
   <a href="#why-does-this-happen" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Does This Happen?
+      
+        Why Does This Happen?
+      
     </span>
   </a>
   
@@ -1106,7 +514,9 @@
           <li class="md-nav__item">
   <a href="#sample-output-results-will-vary" class="md-nav__link">
     <span class="md-ellipsis">
-      Sample Output (Results Will Vary!)
+      
+        Sample Output (Results Will Vary!)
+      
     </span>
   </a>
   
@@ -1120,7 +530,9 @@
         <li class="md-nav__item">
   <a href="#2-mutexes-the-solution-to-race-conditions" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Mutexes: The Solution to Race Conditions
+      
+        2. Mutexes: The Solution to Race Conditions
+      
     </span>
   </a>
   
@@ -1130,7 +542,9 @@
           <li class="md-nav__item">
   <a href="#what-is-a-mutex" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Mutex?
+      
+        What is a Mutex?
+      
     </span>
   </a>
   
@@ -1139,7 +553,9 @@
           <li class="md-nav__item">
   <a href="#mutex-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      Mutex Operations
+      
+        Mutex Operations
+      
     </span>
   </a>
   
@@ -1148,7 +564,9 @@
           <li class="md-nav__item">
   <a href="#fixing-our-counter-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Fixing Our Counter Example
+      
+        Fixing Our Counter Example
+      
     </span>
   </a>
   
@@ -1157,7 +575,9 @@
           <li class="md-nav__item">
   <a href="#sample-output-now-consistent" class="md-nav__link">
     <span class="md-ellipsis">
-      Sample Output (Now Consistent!)
+      
+        Sample Output (Now Consistent!)
+      
     </span>
   </a>
   
@@ -1166,7 +586,9 @@
           <li class="md-nav__item">
   <a href="#critical-section-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
-      Critical Section Guidelines
+      
+        Critical Section Guidelines
+      
     </span>
   </a>
   
@@ -1180,7 +602,9 @@
         <li class="md-nav__item">
   <a href="#3-understanding-semaphores" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Understanding Semaphores
+      
+        3. Understanding Semaphores
+      
     </span>
   </a>
   
@@ -1190,7 +614,9 @@
           <li class="md-nav__item">
   <a href="#what-is-a-semaphore" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Semaphore?
+      
+        What is a Semaphore?
+      
     </span>
   </a>
   
@@ -1200,7 +626,9 @@
           <li class="md-nav__item">
   <a href="#types-of-semaphores" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of Semaphores
+      
+        Types of Semaphores
+      
     </span>
   </a>
   
@@ -1209,7 +637,9 @@
           <li class="md-nav__item">
   <a href="#posix-semaphores-in-cc" class="md-nav__link">
     <span class="md-ellipsis">
-      POSIX Semaphores in C/C++
+      
+        POSIX Semaphores in C/C++
+      
     </span>
   </a>
   
@@ -1218,7 +648,9 @@
           <li class="md-nav__item">
   <a href="#key-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Functions
+      
+        Key Functions
+      
     </span>
   </a>
   
@@ -1227,7 +659,9 @@
           <li class="md-nav__item">
   <a href="#compilation" class="md-nav__link">
     <span class="md-ellipsis">
-      Compilation
+      
+        Compilation
+      
     </span>
   </a>
   
@@ -1241,7 +675,9 @@
           <li class="md-nav__item">
   <a href="#mutual-exclusion-with-semaphores" class="md-nav__link">
     <span class="md-ellipsis">
-      Mutual Exclusion with Semaphores
+      
+        Mutual Exclusion with Semaphores
+      
     </span>
   </a>
   
@@ -1251,7 +687,9 @@
           <li class="md-nav__item">
   <a href="#concept" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept
+      
+        Concept
+      
     </span>
   </a>
   
@@ -1260,7 +698,9 @@
           <li class="md-nav__item">
   <a href="#example-protecting-a-shared-counter" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Protecting a Shared Counter
+      
+        Example: Protecting a Shared Counter
+      
     </span>
   </a>
   
@@ -1269,7 +709,9 @@
           <li class="md-nav__item">
   <a href="#how-semaphore-works" class="md-nav__link">
     <span class="md-ellipsis">
-      How Semaphore Works
+      
+        How Semaphore Works
+      
     </span>
   </a>
   
@@ -1278,7 +720,9 @@
           <li class="md-nav__item">
   <a href="#code-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Code Example
+      
+        Code Example
+      
     </span>
   </a>
   
@@ -1292,7 +736,9 @@
           <li class="md-nav__item">
   <a href="#enforcing-execution-order-with-semaphores" class="md-nav__link">
     <span class="md-ellipsis">
-      Enforcing Execution Order with Semaphores
+      
+        Enforcing Execution Order with Semaphores
+      
     </span>
   </a>
   
@@ -1302,7 +748,9 @@
           <li class="md-nav__item">
   <a href="#concept_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept
+      
+        Concept
+      
     </span>
   </a>
   
@@ -1311,7 +759,9 @@
           <li class="md-nav__item">
   <a href="#example-ordered-printing" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Ordered Printing
+      
+        Example: Ordered Printing
+      
     </span>
   </a>
   
@@ -1320,7 +770,9 @@
           <li class="md-nav__item">
   <a href="#code-example_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Code Example
+      
+        Code Example
+      
     </span>
   </a>
   
@@ -1329,7 +781,9 @@
           <li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation
+      
+        Explanation
+      
     </span>
   </a>
   
@@ -1343,7 +797,9 @@
           <li class="md-nav__item">
   <a href="#simulation-of-a-smart-parking-garage" class="md-nav__link">
     <span class="md-ellipsis">
-      Simulation of a Smart Parking Garage
+      
+        Simulation of a Smart Parking Garage
+      
     </span>
   </a>
   
@@ -1353,7 +809,9 @@
           <li class="md-nav__item">
   <a href="#concept_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept
+      
+        Concept
+      
     </span>
   </a>
   
@@ -1362,7 +820,9 @@
           <li class="md-nav__item">
   <a href="#scenario-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Scenario Setup
+      
+        Scenario Setup
+      
     </span>
   </a>
   
@@ -1371,7 +831,9 @@
           <li class="md-nav__item">
   <a href="#code" class="md-nav__link">
     <span class="md-ellipsis">
-      Code
+      
+        Code
+      
     </span>
   </a>
   
@@ -1380,7 +842,9 @@
           <li class="md-nav__item">
   <a href="#explanation_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation
+      
+        Explanation
+      
     </span>
   </a>
   
@@ -1399,7 +863,9 @@
         <li class="md-nav__item">
   <a href="#4-the-producer-consumer-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      4. The Producer-Consumer Problem
+      
+        4. The Producer-Consumer Problem
+      
     </span>
   </a>
   
@@ -1409,7 +875,9 @@
           <li class="md-nav__item">
   <a href="#concept_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Concept
+      
+        Concept
+      
     </span>
   </a>
   
@@ -1419,7 +887,9 @@
           <li class="md-nav__item">
   <a href="#problem-description" class="md-nav__link">
     <span class="md-ellipsis">
-      Problem Description
+      
+        Problem Description
+      
     </span>
   </a>
   
@@ -1428,7 +898,9 @@
           <li class="md-nav__item">
   <a href="#challenges-to-solve" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges to Solve
+      
+        Challenges to Solve
+      
     </span>
   </a>
   
@@ -1442,7 +914,9 @@
           <li class="md-nav__item">
   <a href="#example-multi-threaded-buffer" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Multi-Threaded Buffer
+      
+        Example: Multi-Threaded Buffer
+      
     </span>
   </a>
   
@@ -1452,7 +926,9 @@
           <li class="md-nav__item">
   <a href="#how-the-solution-works" class="md-nav__link">
     <span class="md-ellipsis">
-      How the Solution Works
+      
+        How the Solution Works
+      
     </span>
   </a>
   
@@ -1461,7 +937,9 @@
           <li class="md-nav__item">
   <a href="#thread-synchronization" class="md-nav__link">
     <span class="md-ellipsis">
-      Thread Synchronization
+      
+        Thread Synchronization
+      
     </span>
   </a>
   
@@ -1480,7 +958,9 @@
         <li class="md-nav__item">
   <a href="#exercises" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercises
+      
+        Exercises
+      
     </span>
   </a>
   
@@ -1490,7 +970,9 @@
           <li class="md-nav__item">
   <a href="#exercise-110-points-enforcing-ordering-for-3-threads" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercise 1[10 points]: Enforcing Ordering for 3 Threads
+      
+        Exercise 1[10 points]: Enforcing Ordering for 3 Threads
+      
     </span>
   </a>
   
@@ -1499,7 +981,9 @@
           <li class="md-nav__item">
   <a href="#exercise-220-points-thread-safe-bank-account" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercise 2[20 points]: Thread-Safe Bank Account
+      
+        Exercise 2[20 points]: Thread-Safe Bank Account
+      
     </span>
   </a>
   
@@ -1508,7 +992,9 @@
           <li class="md-nav__item">
   <a href="#exercise-320-points-multi-threaded-file-processing" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercise 3[20 points]: Multi-threaded File Processing
+      
+        Exercise 3[20 points]: Multi-threaded File Processing
+      
     </span>
   </a>
   
@@ -1529,6 +1015,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1594,7 +1081,7 @@
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Thread &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">thread_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; finished incrementing&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1607,12 +1094,12 @@
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="c1">// Create threads</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="n">thread_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">increment_counter</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">thread_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">increment_counter</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">thread_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="c1">// Wait for all threads to complete</span>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Final counter value = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shared_counter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -1672,7 +1159,7 @@
 <h3 id="mutex-operations">Mutex Operations</h3>
 <p>Pthreads provides several mutex functions:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span><span class="w">                    </span><span class="c1">// Declare a mutex</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span><span class="w">      </span><span class="c1">// Initialize mutex</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span><span class="w">      </span><span class="c1">// Initialize mutex</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span><span class="w">               </span><span class="c1">// Acquire mutex (blocks if unavailable)</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span><span class="w">             </span><span class="c1">// Release mutex</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">pthread_mutex_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span><span class="w">            </span><span class="c1">// Clean up mutex</span>
@@ -1699,7 +1186,7 @@
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Thread &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">thread_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; finished incrementing&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">}</span>
 </span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
 </span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1707,7 +1194,7 @@
 </span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">thread_ids</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span>
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
 </span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="c1">// Initialize the mutex</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">counter_mutex</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">counter_mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
 </span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Starting with counter = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shared_counter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Expected final value = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">INCREMENTS_PER_THREAD</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -1715,12 +1202,12 @@
 </span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="w">    </span><span class="c1">// Create threads</span>
 </span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="w">        </span><span class="n">thread_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">increment_counter_safe</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">thread_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">increment_counter_safe</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">thread_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
 </span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">    </span><span class="c1">// Wait for all threads to complete</span>
 </span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
 </span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Final counter value = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shared_counter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -1819,17 +1306,17 @@ The third argument is the initial value of the semaphore <code>sem</code>, which
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="n">shared_counter</span><span class="o">++</span><span class="p">;</span><span class="w">       </span><span class="c1">// Critical section</span>
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span><span class="w">         </span><span class="c1">// Unlock</span>
 </span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="p">}</span>
 </span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>
 </span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">       </span><span class="c1">// Binary semaphore</span>
 </span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">threads</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">];</span>
 </span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">increment_counter</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">increment_counter</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_THREADS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="w">    </span><span class="n">sem_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span>
 </span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Final counter value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shared_counter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w">  </span><span class="c1">// Should be 50000</span>
@@ -1869,22 +1356,22 @@ sem_wait(&amp;sem);
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">print_hello</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span><span class="w">     </span><span class="c1">// Send signal</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">}</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">print_world</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="n">sem_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span><span class="w">     </span><span class="c1">// Wait for signal</span>
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">}</span>
 </span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
 </span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// Start locked</span>
 </span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">thread1</span><span class="p">,</span><span class="w"> </span><span class="n">thread2</span><span class="p">;</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">    </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">thread1</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">print_hello</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">    </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">thread2</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">print_world</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
-</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">thread1</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
-</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">thread2</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">    </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">thread1</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">print_hello</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">    </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">thread2</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">print_world</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">thread1</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="w">    </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">thread2</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="w">    </span><span class="n">sem_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span>
 </span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="p">}</span>
@@ -1949,7 +1436,7 @@ sem_wait(&amp;sem);
 </span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">    </span><span class="n">sleep</span><span class="p">(</span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">              </span><span class="c1">// Park for random time</span>
 </span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Car &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; leaving&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">    </span><span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span><span class="w">                     </span><span class="c1">// Free the spot</span>
-</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="p">}</span>
 </span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>
 </span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1958,11 +1445,11 @@ sem_wait(&amp;sem);
 </span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ids</span><span class="p">[</span><span class="n">NUM_CARS</span><span class="p">];</span>
 </span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_CARS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">        </span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">car_thread</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">car_thread</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">        </span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">                       </span><span class="c1">// Stagger arrivals</span>
 </span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_CARS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">    </span><span class="n">sem_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span>
 </span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -2057,7 +1544,7 @@ sem_wait(&amp;sem);
 </span><span id="__span-18-45"><a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-46"><a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>
 </span><span id="__span-18-47"><a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Producer %d finished!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">producer_id</span><span class="p">);</span>
-</span><span id="__span-18-48"><a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-18-48"><a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-18-49"><a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a><span class="p">}</span>
 </span><span id="__span-18-50"><a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a>
 </span><span id="__span-18-51"><a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">consumer</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2088,7 +1575,7 @@ sem_wait(&amp;sem);
 </span><span id="__span-18-76"><a id="__codelineno-18-76" name="__codelineno-18-76" href="#__codelineno-18-76"></a><span class="w">        </span><span class="n">usleep</span><span class="p">(</span><span class="mi">150000</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0.15 seconds</span>
 </span><span id="__span-18-77"><a id="__codelineno-18-77" name="__codelineno-18-77" href="#__codelineno-18-77"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-78"><a id="__codelineno-18-78" name="__codelineno-18-78" href="#__codelineno-18-78"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Consumer %d finished!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">consumer_id</span><span class="p">);</span>
-</span><span id="__span-18-79"><a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
+</span><span id="__span-18-79"><a id="__codelineno-18-79" name="__codelineno-18-79" href="#__codelineno-18-79"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 </span><span id="__span-18-80"><a id="__codelineno-18-80" name="__codelineno-18-80" href="#__codelineno-18-80"></a><span class="p">}</span>
 </span><span id="__span-18-81"><a id="__codelineno-18-81" name="__codelineno-18-81" href="#__codelineno-18-81"></a>
 </span><span id="__span-18-82"><a id="__codelineno-18-82" name="__codelineno-18-82" href="#__codelineno-18-82"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -2100,7 +1587,7 @@ sem_wait(&amp;sem);
 </span><span id="__span-18-88"><a id="__codelineno-18-88" name="__codelineno-18-88" href="#__codelineno-18-88"></a><span class="w">    </span><span class="c1">// Initialize synchronization primitives</span>
 </span><span id="__span-18-89"><a id="__codelineno-18-89" name="__codelineno-18-89" href="#__codelineno-18-89"></a><span class="w">    </span><span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">empty_slots</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">BUFFER_SIZE</span><span class="p">);</span><span class="w">  </span><span class="c1">// Initially all slots empty</span>
 </span><span id="__span-18-90"><a id="__codelineno-18-90" name="__codelineno-18-90" href="#__codelineno-18-90"></a><span class="w">    </span><span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">filled_slots</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">           </span><span class="c1">// Initially no items</span>
-</span><span id="__span-18-91"><a id="__codelineno-18-91" name="__codelineno-18-91" href="#__codelineno-18-91"></a><span class="w">    </span><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer_mutex</span><span class="p">,</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-18-91"><a id="__codelineno-18-91" name="__codelineno-18-91" href="#__codelineno-18-91"></a><span class="w">    </span><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer_mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-18-92"><a id="__codelineno-18-92" name="__codelineno-18-92" href="#__codelineno-18-92"></a>
 </span><span id="__span-18-93"><a id="__codelineno-18-93" name="__codelineno-18-93" href="#__codelineno-18-93"></a>
 </span><span id="__span-18-94"><a id="__codelineno-18-94" name="__codelineno-18-94" href="#__codelineno-18-94"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Starting Producer-Consumer simulation...&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -2110,18 +1597,18 @@ sem_wait(&amp;sem);
 </span><span id="__span-18-98"><a id="__codelineno-18-98" name="__codelineno-18-98" href="#__codelineno-18-98"></a><span class="w">    </span><span class="c1">// Create producer threads</span>
 </span><span id="__span-18-99"><a id="__codelineno-18-99" name="__codelineno-18-99" href="#__codelineno-18-99"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_PRODUCERS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-100"><a id="__codelineno-18-100" name="__codelineno-18-100" href="#__codelineno-18-100"></a><span class="w">        </span><span class="n">producer_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-18-101"><a id="__codelineno-18-101" name="__codelineno-18-101" href="#__codelineno-18-101"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">producers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">producer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">producer_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-18-101"><a id="__codelineno-18-101" name="__codelineno-18-101" href="#__codelineno-18-101"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">producers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">producer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">producer_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span><span id="__span-18-102"><a id="__codelineno-18-102" name="__codelineno-18-102" href="#__codelineno-18-102"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-103"><a id="__codelineno-18-103" name="__codelineno-18-103" href="#__codelineno-18-103"></a>
 </span><span id="__span-18-104"><a id="__codelineno-18-104" name="__codelineno-18-104" href="#__codelineno-18-104"></a><span class="w">    </span><span class="c1">// Create consumer threads</span>
 </span><span id="__span-18-105"><a id="__codelineno-18-105" name="__codelineno-18-105" href="#__codelineno-18-105"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_CONSUMERS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-18-106"><a id="__codelineno-18-106" name="__codelineno-18-106" href="#__codelineno-18-106"></a><span class="w">        </span><span class="n">consumer_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-18-107"><a id="__codelineno-18-107" name="__codelineno-18-107" href="#__codelineno-18-107"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">consumers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">consumer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">consumer_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-18-107"><a id="__codelineno-18-107" name="__codelineno-18-107" href="#__codelineno-18-107"></a><span class="w">        </span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">consumers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">consumer</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">consumer_ids</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </span><span id="__span-18-108"><a id="__codelineno-18-108" name="__codelineno-18-108" href="#__codelineno-18-108"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-109"><a id="__codelineno-18-109" name="__codelineno-18-109" href="#__codelineno-18-109"></a>
 </span><span id="__span-18-110"><a id="__codelineno-18-110" name="__codelineno-18-110" href="#__codelineno-18-110"></a><span class="w">    </span><span class="c1">// Wait for all producers to finish</span>
 </span><span id="__span-18-111"><a id="__codelineno-18-111" name="__codelineno-18-111" href="#__codelineno-18-111"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_PRODUCERS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-112"><a id="__codelineno-18-112" name="__codelineno-18-112" href="#__codelineno-18-112"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">producers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-18-112"><a id="__codelineno-18-112" name="__codelineno-18-112" href="#__codelineno-18-112"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">producers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-18-113"><a id="__codelineno-18-113" name="__codelineno-18-113" href="#__codelineno-18-113"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-114"><a id="__codelineno-18-114" name="__codelineno-18-114" href="#__codelineno-18-114"></a>
 </span><span id="__span-18-115"><a id="__codelineno-18-115" name="__codelineno-18-115" href="#__codelineno-18-115"></a><span class="w">    </span><span class="c1">// Send sentinel values (-1) to terminate consumers</span>
@@ -2134,7 +1621,7 @@ sem_wait(&amp;sem);
 </span><span id="__span-18-122"><a id="__codelineno-18-122" name="__codelineno-18-122" href="#__codelineno-18-122"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-123"><a id="__codelineno-18-123" name="__codelineno-18-123" href="#__codelineno-18-123"></a><span class="w">    </span><span class="c1">// Wait for all consumers to finish</span>
 </span><span id="__span-18-124"><a id="__codelineno-18-124" name="__codelineno-18-124" href="#__codelineno-18-124"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_CONSUMERS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-125"><a id="__codelineno-18-125" name="__codelineno-18-125" href="#__codelineno-18-125"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">consumers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="k">nullptr</span><span class="p">);</span>
+</span><span id="__span-18-125"><a id="__codelineno-18-125" name="__codelineno-18-125" href="#__codelineno-18-125"></a><span class="w">        </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">consumers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
 </span><span id="__span-18-126"><a id="__codelineno-18-126" name="__codelineno-18-126" href="#__codelineno-18-126"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-18-127"><a id="__codelineno-18-127" name="__codelineno-18-127" href="#__codelineno-18-127"></a>
 </span><span id="__span-18-128"><a id="__codelineno-18-128" name="__codelineno-18-128" href="#__codelineno-18-128"></a><span class="w">    </span><span class="c1">// Cleanup</span>
@@ -2342,10 +1829,11 @@ sem_wait(&amp;sem);
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.sections"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "navigation.indexes", "navigation.sections"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/mkdocs-charts-plugin.js"></script>
       
@@ -2356,8 +1844,6 @@ sem_wait(&amp;sem);
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
