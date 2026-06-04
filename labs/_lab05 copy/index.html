@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://khalid-elbadawi.github.io/C425/labs/lab05/">
+        <link rel="canonical" href="https://khalid-elbadawi.github.io/C425/labs/_lab05%20copy/">
       
       
       
@@ -701,6 +701,111 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lab-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lab Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-1-basic-parallel-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1: Basic Parallel Programming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-2-array-operations-without-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2: Array Operations without Reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-3-array-operations-with-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3: Array Operations with Reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-4-product-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 4: Product Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-5-variable-scope-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 5: Variable Scope Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-6-trapezoidal-rule-performance-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 6: Trapezoidal Rule Performance Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-7-race-condition-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 7: Race Condition Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-8-custom-reduction-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 8: Custom Reduction Operation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#performance-analysis-template" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -716,6 +821,17 @@
     <span class="md-ellipsis">
       
         Submission Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Resources
       
     </span>
   </a>
@@ -1361,13 +1477,10 @@
 </span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="p">}</span>
 </span></code></pre></div>
-<div class="admonition question">
-<p class="admonition-title"><strong>Exercise 4:</strong></p>
-<ol>
-<li>Run the above program multiple times. Do you get the expected result?</li>
-<li>Explain why the results are inconsistent.</li>
-</ol>
-</div>
+<p>!!! question <strong>Exercise 4:</strong> </p>
+<div class="language-text highlight"><pre><span></span><code>1. Run the above program multiple times. Do you get the expected result?
+1. Explain why the results are inconsistent.
+</code></pre></div>
 <p><strong>Example 4.2: Using Private Variables</strong></p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span>
@@ -1461,12 +1574,9 @@
 </span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="p">}</span>
 </span></code></pre></div>
-<div class="admonition question">
-<p class="admonition-title"><strong>Exercise 5:</strong></p>
-<ol>
-<li>Try compiling Example 4.4 without specifying all variables in the default(none) clause (i.e., remove <code>shared</code> and <code>private</code> clauses)</li>
-</ol>
-</div>
+<p>!!! question <strong>Exercise 5:</strong> </p>
+<div class="language-text highlight"><pre><span></span><code>1. Try compiling Example 4.4 without specifying all variables in the default(none) clause (i.e., remove `shared` and `private` clauses)
+</code></pre></div>
 <hr />
 <h2 id="part-5-trapezoidal-rule-implementation">Part 5: Trapezoidal Rule Implementation</h2>
 <h3 id="51-serial-implementation">5.1 Serial Implementation</h3>
@@ -1637,11 +1747,66 @@
 </span><span id="__span-19-60"><a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
+<h2 id="lab-exercises">Lab Exercises</h2>
+<h3 id="exercise-1-basic-parallel-programming">Exercise 1: Basic Parallel Programming</h3>
+<p>Write a program that:
+1. Creates a parallel region with 6 threads
+2. Each thread prints its ID and the total number of threads
+3. Measure the time taken for the parallel region
+4. Compare with serial execution</p>
+<p><strong>Constraint:</strong> Use <code>num_threads(6)</code> clause.</p>
+<h3 id="exercise-2-array-operations-without-reduction">Exercise 2: Array Operations without Reduction</h3>
+<p>Write a program that:
+1. Creates an array of 10,000 integers initialized with values 1 to 10,000
+2. Calculates the sum using 4 threads with manual work distribution
+3. Uses a critical section to update the global sum
+4. Prints the partial sums calculated by each thread</p>
+<p><strong>Constraint:</strong> Must use <code>#pragma omp critical</code> and show the work distribution explicitly.</p>
+<h3 id="exercise-3-array-operations-with-reduction">Exercise 3: Array Operations with Reduction</h3>
+<p>Modify Exercise 2 to:
+1. Use reduction instead of critical section
+2. Compare the performance with the previous version
+3. Test with different numbers of threads (2, 4, 8)</p>
+<p><strong>Constraint:</strong> Must use <code>reduction(+:sum)</code> clause.</p>
+<h3 id="exercise-4-product-calculation">Exercise 4: Product Calculation</h3>
+<p>Write a program that:
+1. Creates an array of 1000 floating-point numbers initialized to 1.001
+2. Calculates the product of all elements using 4 threads
+3. Implement both critical section and reduction approaches
+4. Compare the results and performance</p>
+<p><strong>Constraint:</strong> Use <code>reduction(*:product)</code> for the reduction version.</p>
+<h3 id="exercise-5-variable-scope-investigation">Exercise 5: Variable Scope Investigation</h3>
+<p>Write a program that demonstrates:
+1. The difference between shared and private variables
+2. The use of <code>firstprivate</code> clause
+3. The effect of <code>default(none)</code> clause
+4. Include at least 3 different variables with different scopes</p>
+<p><strong>Constraint:</strong> Must use <code>default(none)</code> and explicitly specify scope for all variables.</p>
+<h3 id="exercise-6-trapezoidal-rule-performance-analysis">Exercise 6: Trapezoidal Rule Performance Analysis</h3>
+<p>Implement the trapezoidal rule for the function f(x) = sin(x) over the interval [0, π]:
+1. Serial version
+2. Parallel version with critical section
+3. Parallel version with reduction
+4. Test with different numbers of threads (1, 2, 4, 8, 16)
+5. Calculate and report speedup and efficiency</p>
+<p><strong>Constraint:</strong> Use exactly 1,000,000 trapezoids and measure execution time.</p>
+<h3 id="exercise-7-race-condition-investigation">Exercise 7: Race Condition Investigation</h3>
+<p>Write a program that:
+1. Creates a shared counter variable
+2. Each of 8 threads increments the counter 100,000 times
+3. Run the program 10 times and record the final counter values
+4. Explain the inconsistency in results
+5. Fix the race condition using appropriate synchronization</p>
+<p><strong>Constraint:</strong> Show the problem first, then provide the solution with proper synchronization.</p>
+<h3 id="exercise-8-custom-reduction-operation">Exercise 8: Custom Reduction Operation</h3>
+<p>Implement a program that finds both the maximum and minimum values in an array:
+1. Use separate reduction operations for max and min
+2. Compare with a single-pass serial algorithm
+3. Test with an array of 1 million random numbers</p>
+<p><strong>Constraint:</strong> Must use both <code>reduction(max:max_val)</code> and <code>reduction(min:min_val)</code>.</p>
+<hr />
 <h2 id="performance-analysis-template">Performance Analysis Template</h2>
 <p>For each exercise involving performance measurement, record your results in the following format:</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Data size: <strong><em>_</em></strong><strong><em>_</em></strong></p>
 <table>
 <thead>
 <tr>
@@ -1678,19 +1843,23 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>Formulas:</strong>
 - Speedup = Serial Time / Parallel Time
 - Efficiency = Speedup / Number of Threads</p>
 <h2 id="submission-guidelines">Submission Guidelines</h2>
 <ol>
-<li>Do ALL exercises (1 to 5)</li>
 <li>Submit all source code files with proper comments</li>
 <li>Include a performance analysis report for exercises requiring timing</li>
 <li>Answer all questions posed in the exercises</li>
 <li>Demonstrate understanding of OpenMP concepts through code examples</li>
 <li>Include compilation commands and sample outputs</li>
 </ol>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li>OpenMP Official Documentation: https://www.openmp.org/</li>
+<li>OpenMP Tutorial: https://computing.llnl.gov/tutorials/openMP/</li>
+<li>Compiler flags: <code>-fopenmp</code> for GCC, <code>-qopenmp</code> for Intel compiler</li>
+</ul>
 
 
 
