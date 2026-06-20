@@ -8,8 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://khalid-elbadawi.github.io/C425/labs/_lab02/">
+        <link rel="canonical" href="https://khalid-elbadawi.github.io/C425/labs/lab02/">
       
+      
+        <link rel="prev" href="../lab01/">
       
       
       
@@ -311,8 +313,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -320,6 +324,8 @@
       
         
       
+        
+      
     
     
     
@@ -329,11 +335,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -354,7 +360,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -416,6 +422,660 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab(2): Thread Synchronization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab(2): Thread Synchronization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lab-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Submission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-race-condition-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Race Condition Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. The Race Condition Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-race-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Race Condition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-simple-example-shared-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Simple Example: Shared Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does This Happen?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-results-will-vary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output (Results Will Vary!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-mutexes-the-solution-to-race-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Mutexes: The Solution to Race Conditions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Mutexes: The Solution to Race Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-mutex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Mutex?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutex-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutex Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixing-our-counter-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixing Our Counter Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-now-consistent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output (Now Consistent!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-section-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Section Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-understanding-semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Understanding Semaphores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Understanding Semaphores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-semaphore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Semaphore?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Semaphore?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types of Semaphores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posix-semaphores-in-cc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSIX Semaphores in C/C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-exclusion-with-semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutual Exclusion with Semaphores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutual Exclusion with Semaphores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-protecting-a-shared-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Protecting a Shared Counter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-semaphore-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Semaphore Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforcing-execution-order-with-semaphores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcing Execution Order with Semaphores
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enforcing Execution Order with Semaphores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-ordered-printing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Ordered Printing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-of-a-smart-parking-garage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation of a Smart Parking Garage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Simulation of a Smart Parking Garage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explanation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-producer-consumer-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Producer-Consumer Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Producer-Consumer Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-to-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenges to Solve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-multi-threaded-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Multi-Threaded Buffer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Multi-Threaded Buffer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-solution-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Solution Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread Synchronization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercise-110-points-enforcing-ordering-for-3-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1[10 points]: Enforcing Ordering for 3 Threads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-220-points-thread-safe-bank-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2[20 points]: Thread-Safe Bank Account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-320-points-multi-threaded-file-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 3[20 points]: Multi-threaded File Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1055,7 +1715,7 @@
   <h1>Lab(2): Thread Synchronization</h1>
 
 <h2 id="lab-overview">Lab Overview</h2>
-<p>This lab builds upon Lab 1's introduction to concurrent programming with POSIX Threads (Pthreads). While Lab 1 demonstrated the power of parallelism, you may have noticed that when multiple threads access shared resources simultaneously, unpredictable behavior can occur. This lab addresses the critical challenge of <strong>thread synchronization</strong> and explores how to coordinate multiple threads safely when they share data.</p>
+<p>This lab builds upon Lab 1's introduction to concurrent programming with POSIX Threads (Pthreads). While Lab 1 demonstrated the power of parallelism, this lab demostrates the challenge when multiple threads access shared resources simultaneously. In this case, unpredictable behavior can occur. Therefore, the second lab addresses the critical problem of <strong>thread synchronization</strong> and explores how to coordinate multiple threads safely when they share data.</p>
 <p>You'll learn about <strong>race conditions</strong> - one of the most common and dangerous problems in parallel programming - and discover how to solve them using <strong>mutexes</strong> and <strong>semaphores</strong>. By the end of this lab, you'll understand why synchronization is essential and how to implement it correctly.</p>
 <h2 id="lab-objectives">Lab Objectives</h2>
 <ol>
@@ -1196,7 +1856,7 @@
 </span></code></pre></div>
 <h3 id="fixing-our-counter-example">Fixing Our Counter Example</h3>
 <p>Here's the corrected version using a mutex:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<div class="language-cpp copy select highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">shared_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -1322,7 +1982,7 @@ The third argument is the initial value of the semaphore <code>sem</code>, which
 <h4 id="how-semaphore-works">How Semaphore Works</h4>
 <p>Before the critical section you want to protect, you place a call to the function <code>sem_wait</code>. A thread that executes <code>sem_wait</code> will block if the semaphore is 0. If the semaphore is nonzero, it will decrement the semaphore and proceed. After executing the code in the critical section, a thread calls <code>sem_post</code>, which increments the semaphore, and a thread waiting in <code>sem_wait</code> can proceed.</p>
 <h4 id="code-example">Code Example</h4>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;semaphore.h&gt;</span>
+<div class="language-cpp select copy highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;semaphore.h&gt;</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
