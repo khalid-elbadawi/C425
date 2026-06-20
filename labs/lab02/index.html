@@ -1035,10 +1035,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercise-110-points-enforcing-ordering-for-3-threads" class="md-nav__link">
+  <a href="#exercise-120-enforcing-ordering-for-3-threads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exercise 1[10 points]: Enforcing Ordering for 3 Threads
+        Exercise 1[20%]: Enforcing Ordering for 3 Threads
       
     </span>
   </a>
@@ -1046,10 +1046,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercise-220-points-thread-safe-bank-account" class="md-nav__link">
+  <a href="#exercise-280" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exercise 2[20 points]: Thread-Safe Bank Account
+        Exercise 2[80%]:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2[80%]:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-parallel-sum-with-direct-global-update-high-mutex-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Parallel Sum with Direct Global Update (High Mutex Overhead)
       
     </span>
   </a>
@@ -1057,13 +1069,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercise-320-points-multi-threaded-file-processing" class="md-nav__link">
+  <a href="#task-2-parallel-sum-with-local-partial-sums-reduced-mutex-overhead" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exercise 3[20 points]: Multi-threaded File Processing
+        Task 2: Parallel Sum with Local Partial Sums (Reduced Mutex Overhead)
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1658,10 +1675,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercise-110-points-enforcing-ordering-for-3-threads" class="md-nav__link">
+  <a href="#exercise-120-enforcing-ordering-for-3-threads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exercise 1[10 points]: Enforcing Ordering for 3 Threads
+        Exercise 1[20%]: Enforcing Ordering for 3 Threads
       
     </span>
   </a>
@@ -1669,10 +1686,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercise-220-points-thread-safe-bank-account" class="md-nav__link">
+  <a href="#exercise-280" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exercise 2[20 points]: Thread-Safe Bank Account
+        Exercise 2[80%]:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2[80%]:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-parallel-sum-with-direct-global-update-high-mutex-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Parallel Sum with Direct Global Update (High Mutex Overhead)
       
     </span>
   </a>
@@ -1680,13 +1709,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercise-320-points-multi-threaded-file-processing" class="md-nav__link">
+  <a href="#task-2-parallel-sum-with-local-partial-sums-reduced-mutex-overhead" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exercise 3[20 points]: Multi-threaded File Processing
+        Task 2: Parallel Sum with Local Partial Sums (Reduced Mutex Overhead)
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2409,60 +2443,128 @@ sem_wait(&amp;sem);
 </ol>
 <hr />
 <h2 id="exercises">Exercises</h2>
-<h3 id="exercise-110-points-enforcing-ordering-for-3-threads">Exercise 1[10 points]: Enforcing Ordering for 3 Threads</h3>
+<h3 id="exercise-120-enforcing-ordering-for-3-threads">Exercise 1[20%]: Enforcing Ordering for 3 Threads</h3>
 <p>Write a C++ program that creates 3 threads. The first thread prints out "Power", the second thread prints out " is ", and the third thread prints out "Knowledge". Use POSIX semaphore such that the final output is always "Knowledge is Power". [Hine: Use two semaphors]</p>
-<h3 id="exercise-220-points-thread-safe-bank-account">Exercise 2[20 points]: Thread-Safe Bank Account</h3>
-<p>Write a C++ program that simulates a bank account with multiple threads performing deposits and withdrawals concurrently.</p>
-<p><strong>Requirements:</strong></p>
-<ol>
-<li>Create a <code>BankAccount</code> class with:<ul>
-<li>Private balance member</li>
-<li><code>deposit(amount)</code> method</li>
-<li><code>withdraw(amount)</code> method (should not allow negative balance)</li>
-<li><code>getBalance()</code> method</li>
-</ul>
-</li>
-<li>Create 5 threads: 3 performing deposits, 2 performing withdrawals</li>
-<li>Each thread should perform 1000 operations</li>
-<li>Use appropriate synchronization to prevent race conditions</li>
-<li>Print the final balance and verify it matches expected calculations</li>
-</ol>
-<p><strong>Expected Structure:</strong>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">BankAccount</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">private</span><span class="o">:</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">account_mutex</span><span class="p">;</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="k">public</span><span class="o">:</span>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="n">BankAccount</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">initial_balance</span><span class="p">);</span>
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">deposit</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">withdraw</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span><span class="w">  </span><span class="c1">// returns false if insufficient funds</span>
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">getBalance</span><span class="p">();</span>
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="o">~</span><span class="n">BankAccount</span><span class="p">();</span>
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="p">};</span>
-</span></code></pre></div></p>
-<h3 id="exercise-320-points-multi-threaded-file-processing">Exercise 3[20 points]: Multi-threaded File Processing</h3>
-<p>Create a program that processes multiple text files concurrently while maintaining thread safety.</p>
-<p><strong>Requirements:</strong></p>
-<ol>
-<li>Create 5 text files with random numbers (one number per line)</li>
-<li>Use 3 worker threads to process files concurrently</li>
-<li>Each thread should:<ul>
-<li>Read numbers from assigned files</li>
-<li>Calculate sum, count, and average</li>
-<li>Add results to shared data structure</li>
-</ul>
-</li>
-<li>Use mutex to protect shared results</li>
-<li>Main thread should print final combined statistics</li>
-<li>Demonstrate that the multi-threaded version produces the same results as sequential processing</li>
-</ol>
-<p><strong>Shared Data Structure:</strong>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">GlobalStats</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">total_sum</span><span class="p">;</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total_count</span><span class="p">;</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">stats_mutex</span><span class="p">;</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">};</span>
-</span></code></pre></div></p>
+<h3 id="exercise-280">Exercise 2[80%]:</h3>
+<p>In high-performance computing (HPC), large datasets are often processed in parallel to reduce execution time. In this assignment, you will parallelize a sequential summation program using POSIX threads (Pthreads) in two different ways, and analyze the performance of each approach.</p>
+<p>You are given the following sequential code that reads 5 million integers from a file and computes their sum:</p>
+<div class="language-cpp copy select highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="cm">/* Set Monotonic Clock */</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="k">using</span><span class="w"> </span><span class="n">my_clock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="p">;</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="cm">/* GLOBAL SUM */</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">total</span><span class="p">;</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">loadIntegersFromFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_integers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="p">;</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ifstream</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">.</span><span class="n">is_open</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Error: Could not open file &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">numbers</span><span class="p">;</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">num_integers</span><span class="p">);</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">num_integers</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="n">numbers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">numbers</span><span class="p">;</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="p">}</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="c1">// Calculates the sum of all integers in a vector</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="kt">void</span><span class="w"> </span><span class="n">sumSequential</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">numbers</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="w">        </span><span class="n">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="p">}</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;data.txt&quot;</span><span class="p">;</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000000</span><span class="p">;</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loadIntegersFromFile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Loaded &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">my_data</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; elements into the vector.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="w">    </span><span class="cm">/* Sequential Summation*/</span>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">start_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="w">    </span><span class="n">sumSequential</span><span class="p">(</span><span class="n">my_data</span><span class="p">);</span>
+</span><span id="__span-20-45"><a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">end_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+</span><span id="__span-20-46"><a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Sum of all integers: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-20-47"><a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a><span class="w">    </span><span class="n">my_clock</span><span class="o">::</span><span class="n">duration</span><span class="w"> </span><span class="n">execution_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="p">;</span>
+</span><span id="__span-20-48"><a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Execution time is &quot;</span>
+</span><span id="__span-20-49"><a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a><span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="o">&gt;</span><span class="p">(</span><span class="n">execution_time</span><span class="p">).</span><span class="n">count</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-20-50"><a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a><span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ms.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-20-51"><a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-20-52"><a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>To generate <code>data.txt</code> containing 5 million random integers, compile and run:</p>
+<div class="language-cpp copy select highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctime&gt;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">file</span><span class="p">(</span><span class="s">&quot;data.txt&quot;</span><span class="p">);</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">.</span><span class="n">is_open</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Error: Could not create data.txt&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">COUNT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000000</span><span class="p">;</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">srand</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">time</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">)));</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">COUNT</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">        </span><span class="n">file</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Done! &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">COUNT</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; integers written to data.txt&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Use <code>clock_gettime(CLOCK_MONOTONIC, ...)</code> to measure execution time in all three programs (sequential, Exercise 1, Exercise 2) as follows:</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">timespec</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">clock_gettime</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">start</span><span class="p">);</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1">// ... code to measure ...</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="n">clock_gettime</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">end</span><span class="p">);</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="kt">double</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="n">tv_sec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">.</span><span class="n">tv_sec</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">                 </span><span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="n">tv_nsec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">.</span><span class="n">tv_nsec</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="p">;</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; seconds&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></code></pre></div>
+<hr />
+<h4 id="task-1-parallel-sum-with-direct-global-update-high-mutex-overhead">Task 1: Parallel Sum with Direct Global Update (High Mutex Overhead)</h4>
+<p>Modify the sequential program so that <strong>4 Pthreads compute the sum in parallel</strong>. In this version, each thread iterates over its assigned chunk and <strong>adds each individual element directly to a shared global sum</strong>. Use thread synchronization to avoid race condition.</p>
+<p>Use the struct below to pass arguments to each thread:
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadArgs</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">threadId</span><span class="p">;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">;</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">};</span>
+</span></code></pre></div>
+After all threads finish with <code>pthread_join()</code>, print the parallel sum and verify it matches the sequential result. Measure and print the <strong>parallel execution time</strong> of the summation (excluding file loading). Compute and print <strong>Speedup</strong> and <strong>Efficiency</strong> using:</p>
+<div class="arithmatex">\[S = \frac{T_{sequential}}{T_{parallel}} \qquad E = \frac{S}{P}\]</div>
+<p>where <span class="arithmatex">\(P = 4\)</span> (number of threads).</p>
+<blockquote>
+<p><strong>Observation:</strong> Notice that the parallel time is likely <strong>slower</strong> than sequential. Think about why.</p>
+</blockquote>
+<h4 id="task-2-parallel-sum-with-local-partial-sums-reduced-mutex-overhead">Task 2: Parallel Sum with Local Partial Sums (Reduced Mutex Overhead)</h4>
+<p>Improve the approach from Task 1. Each thread now <strong>accumulates its own local partial sum</strong> first, and then adds its partial sum to <strong>global sum</strong>.</p>
+<p>Each thread must:
+   - Compute a <strong>local</strong> <code>partial_sum</code> over its chunk without any locking
+   - After the loop, add <code>partial_sum</code> to global sum.
+After all threads finish, print the parallel sum and verify it matches the sequential result. Measure and print the <strong>parallel execution time</strong>. Compute and print <strong>Speedup</strong> and <strong>Efficiency</strong> using the same sequential time as the baseline.</p>
+<blockquote>
+<p><strong>Observation:</strong> Notice the significant improvement over Task 1. The mutex is now acquired only 4 times total instead of 5 million times.</p>
+</blockquote>
 
 
 
