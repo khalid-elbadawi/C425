@@ -2527,28 +2527,15 @@ sem_wait(&amp;sem);
 </span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Use <code>clock_gettime(CLOCK_MONOTONIC, ...)</code> to measure execution time in all three programs (sequential, Exercise 1, Exercise 2) as follows:</p>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">timespec</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">clock_gettime</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">start</span><span class="p">);</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c1">// ... code to measure ...</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="n">clock_gettime</span><span class="p">(</span><span class="n">CLOCK_MONOTONIC</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">end</span><span class="p">);</span>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="kt">double</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="n">tv_sec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">.</span><span class="n">tv_sec</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">                 </span><span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="n">tv_nsec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">.</span><span class="n">tv_nsec</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="p">;</span>
-</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Time: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; seconds&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span></code></pre></div>
 <hr />
 <h4 id="task-1-parallel-sum-with-direct-global-update-high-mutex-overhead">Task 1: Parallel Sum with Direct Global Update (High Mutex Overhead)</h4>
 <p>Modify the sequential program so that <strong>4 Pthreads compute the sum in parallel</strong>. In this version, each thread iterates over its assigned chunk and <strong>adds each individual element directly to a shared global sum</strong>. Use thread synchronization to avoid race condition.</p>
 <p>Use the struct below to pass arguments to each thread:
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadArgs</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">threadId</span><span class="p">;</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">;</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">};</span>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ThreadArgs</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">threadId</span><span class="p">;</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="p">;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="p">};</span>
 </span></code></pre></div>
 After all threads finish with <code>pthread_join()</code>, print the parallel sum and verify it matches the sequential result. Measure and print the <strong>parallel execution time</strong> of the summation (excluding file loading). Compute and print <strong>Speedup</strong> and <strong>Efficiency</strong> using:</p>
 <div class="arithmatex">\[S = \frac{T_{sequential}}{T_{parallel}} \qquad E = \frac{S}{P}\]</div>
@@ -2558,10 +2545,12 @@ After all threads finish with <code>pthread_join()</code>, print the parallel su
 </blockquote>
 <h4 id="task-2-parallel-sum-with-local-partial-sums-reduced-mutex-overhead">Task 2: Parallel Sum with Local Partial Sums (Reduced Mutex Overhead)</h4>
 <p>Improve the approach from Task 1. Each thread now <strong>accumulates its own local partial sum</strong> first, and then adds its partial sum to <strong>global sum</strong>.</p>
-<p>Each thread must:
-   - Compute a <strong>local</strong> <code>partial_sum</code> over its chunk without any locking
-   - After the loop, add <code>partial_sum</code> to global sum.
-After all threads finish, print the parallel sum and verify it matches the sequential result. Measure and print the <strong>parallel execution time</strong>. Compute and print <strong>Speedup</strong> and <strong>Efficiency</strong> using the same sequential time as the baseline.</p>
+<p>Each thread must:</p>
+<ul>
+<li>Compute a <strong>local</strong> <code>partial_sum</code> over its chunk without any locking</li>
+<li>After the loop, add <code>partial_sum</code> to global sum.</li>
+</ul>
+<p>After all threads finish, print the parallel sum and verify it matches the sequential result. Measure and print the <strong>parallel execution time</strong>. Compute and print <strong>Speedup</strong> and <strong>Efficiency</strong> using the same sequential time as the baseline.</p>
 <blockquote>
 <p><strong>Observation:</strong> Notice the significant improvement over Task 1. The mutex is now acquired only 4 times total instead of 5 million times.</p>
 </blockquote>
